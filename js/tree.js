@@ -3,10 +3,18 @@ var treeview = {
     jsonEntryData: null,
     selectedNode: null,
     csvName: null,
+    observer: null,
+
+    selectedNodeChanges:()=>{
+        return new rxjs.Observable(
+            (observer)=>{
+                treeview.observer=observer;
+            }
+        );
+    },
 
     makeJsonEntryData: (d) => {
         treeview.jsonEntryData = treeview.nodesFromModel(d);
-        return treeview;
     },
 
     nodesFromModel: (obj) => {
@@ -29,7 +37,11 @@ var treeview = {
         return node;
     },
 
-    display: () => {
+    display: (d) => {
+
+        treeview.makeJsonEntryData(d);
+        let observable=treeview.selectedNodeChanges();
+
         let w = $('#treeview').width();
         let h = $('#treeview').height();
 
@@ -53,6 +65,7 @@ var treeview = {
 
         treeview.initRoot(height);
 
+        return observable;
     },
 
     initRoot: (height) => {
@@ -81,6 +94,7 @@ var treeview = {
         // store selected node
         treeview.csvName = ((source.depth >= 1) ? (source.parent.key + "-") : ("")) + source.key;
         treeview.selectedNode = source;
+        if(treeview.observer) treeview.observer.next(treeview.csvName);
 
         // Compute the new tree layout.
         var nodes = treeview.tree.nodes(treeview.root).reverse(),
