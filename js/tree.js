@@ -2,6 +2,7 @@ var treeview = {
 
     jsonEntryData: null,
     selectedNode: null,
+    csvName: null,
 
     makeJsonEntryData: (d) => {
         treeview.jsonEntryData = treeview.nodesFromModel(d);
@@ -78,7 +79,8 @@ var treeview = {
     update: (source) => {
 
         // store selected node
-        treeview.selectedNode = ((source.depth > 1) ? (source.parent.key + "-") : ("")) + source.key;
+        treeview.csvName = ((source.depth >= 1) ? (source.parent.key + "-") : ("")) + source.key;
+        treeview.selectedNode = source;
 
         // Compute the new tree layout.
         var nodes = treeview.tree.nodes(treeview.root).reverse(),
@@ -118,7 +120,11 @@ var treeview = {
 
         nodeUpdate.select("circle")
             .attr("r", 4.5)
-            .style("fill", function (d) { return d._children ? "lightsteelblue" : "#fff"; });
+            .style("fill", function (d) {
+                let color = d._children ? "lightsteelblue" : "#fff";
+                color = d.key==treeview.selectedNode.key ? "#f00" : color;
+                return color;
+            });
 
         nodeUpdate.select("text")
             .style("fill-opacity", 1);
