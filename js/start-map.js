@@ -6,8 +6,22 @@ var mainMap={
     geojson:null,// reference to geojson raw data loaded from file
     mainLayer: null,// reference to main leaflet layer based on geojson raw data.
     info:L.control(),
+    observer:null,
 
     init:()=>{
+        return new rxjs.Observable(
+            (observer)=>{
+                mainMap.observer=observer;
+                mainMap.fetchTheData();
+            },
+            ()=>{
+                // on error, set .... as default
+                console.log("Missing error handler");
+            }
+        );
+    },
+
+    createMap:()=>{
         mainMap.map = L.map('mainmap').setView([-23, -45], 8);
 
         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
@@ -21,8 +35,6 @@ var mainMap={
 
         mainMap.addInfoControl();
         mainMap.addAttribution();
-        mainMap.loadGeojson();
-        mainMap.addLegend();
     },
 
     /**
@@ -36,7 +48,7 @@ var mainMap={
                 f.properties["indicator"]=csv.values[geocode];
             }
         );
-        mainMap.renewMainLayer(mainMap.geojson);
+        mainMap.createMainLayer(mainMap.geojson);
     },
 
     // control that shows state info on hover
@@ -114,14 +126,33 @@ var mainMap={
         });
     },
 
-    loadGeojson: async ()=>{
-        const response = await fetch("data/rm-vale.geojson");
-        const data = await response.json();
-        mainMap.geojson = data;
-        mainMap.renewMainLayer(data);
+    fetchTheData(){
+        fetch("data/rm-vale.geojson")
+        .then(
+            (response)=>{
+                // on sucess
+                response.json()
+                .then(
+                    (data)=>{
+                        mainMap.geojson = data;
+                        mainMap.createMap();
+                        mainMap.createMainLayer(data);
+                        mainMap.addLegend();
+                        // on sucess
+                        if(mainMap.observer) mainMap.observer.next();
+                    }
+                );
+            },
+            ()=>{
+                // on reject
+                // mainMap.observer.
+                console.log("Falhou ao ler o geojson. Mapa incompleto.");
+            },
+        );
     },
 
-    renewMainLayer: (data)=>{
+    createMainLayer: (data)=>{
+        if(mainMap.mainLayer) mainMap.mainLayer.removeFrom(mainMap.map);
         mainMap.mainLayer = L.geoJson(data, {
             style: mainMap.style,
             onEachFeature: mainMap.onEachFeature
