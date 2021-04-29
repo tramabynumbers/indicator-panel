@@ -30,7 +30,9 @@ $(document).ready(()=>{
                     );
                 }
             );
-        }
+        },
+        (e)=> { console.log('onError: %s', e); },
+        ()=> { console.log('onCompleted'); }
     );
 
 });
