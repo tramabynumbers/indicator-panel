@@ -2,11 +2,11 @@
     "dataversion":"v1.0.0-beta",
     "key":"IVM-COVID-19",
     "description":"Índice de Vulnerabilidade Metropolitana à COVID-19",
-    "dimensions":[
+    "nodes":[
         {
             "key":"AP",
             "description":"Ativos domiciliares, das famílias e populacionais",
-            "indicators":[
+            "nodes":[
                 {
                     "key":"V01",
                     "description":"Domicílios com rendimento domiciliar nominal mensal per capita de até 1 salário mínimo (s.m.)"
@@ -44,7 +44,7 @@
         {
             "key":"AT",
             "description":"Ativos territoriais",
-            "indicators":[
+            "nodes":[
                 {
                     "key":"V01",
                     "description":"Domicílios atingidos por paralisações no sistema de abastecimento de água"
@@ -66,7 +66,7 @@
         {
             "key":"AS",
             "description":"Ativos do sistema de saúde",
-            "indicators":[
+            "nodes":[
                 {
                     "key":"V01",
                     "description":"Taxa de leitos (UTI) total por 1.000 habitantes para município"
@@ -105,7 +105,38 @@
                 },
                 {
                     "key":"V10",
-                    "description":"Percentual da população que não é beneficiária de plano de saúde"
+                    "description":"Percentual da população que não é beneficiária de plano de saúde",
+                    "nodes":[
+                        {
+                            "key":"V08",
+                            "description":"Taxa de médicos por 1.000 habitantes",
+                            "nodes":[
+                                {
+                                    "key":"V01",
+                                    "description":"Taxa de médicos por 1.000 habitantes"
+                                },
+                                {
+                                    "key":"V02",
+                                    "description":"Proporção médicos que atendem pelo SUS em relação ao total de médico",
+                                    "nodes":[
+                                        {
+                                            "key":"folha1",
+                                            "description":"Taxa de médicos por 1.000 habitantes"
+                                        },
+                                        {
+                                            "key":"folha2",
+                                            "description":"Proporção médicos que atendem pelo SUS em relação ao total de médico"
+                                            
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "key":"V09",
+                            "description":"Proporção médicos que atendem pelo SUS em relação ao total de médico"
+                        }
+                    ]
                 }
             ]
         }

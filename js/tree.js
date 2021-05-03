@@ -4,6 +4,7 @@ var treeview = {
     selectedNode: null,
     csvName: null,
     observer: null,
+    maxDepth: 6,
 
     selectedNodeChanges:()=>{
         return new rxjs.Observable(
@@ -50,7 +51,7 @@ var treeview = {
             height = h - margin.top - margin.bottom;
         treeview.i = 0;
 
-        treeview.duration = 750;
+        treeview.duration = 350;
         treeview.tree = d3v3.layout.tree()
             .size([height, width]);
 
@@ -101,7 +102,8 @@ var treeview = {
             links = treeview.tree.links(nodes);
 
         // Normalize for fixed-depth.
-        nodes.forEach(function (d) { d.y = d.depth * 180; });
+        let maxWidth=$('#treeview').width()/treeview.maxDepth;
+        nodes.forEach(function (d) { d.y = d.depth * parseInt(maxWidth); });
 
         // Update the nodes…
         var node = treeview.svg.selectAll("g.node")

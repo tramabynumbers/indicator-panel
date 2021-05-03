@@ -8,5 +8,20 @@ var utils={
         let mainRowHeight=window.innerHeight*offset;
         $('#mainmap').height(mainRowHeight);
         $('#treeview').height(mainRowHeight);
+    },
+
+    /**
+     * 
+     * @param {*} msg The string message
+     * @param {*} aggregate if message should be aggregate with inner content of alert element
+     */
+    displayError:(msg, aggregate)=>{
+        let text="";
+        $('#errors').attr('style','display:'+(msg?'block':'none')+';');
+        if(aggregate) {
+            let t=(($('#msg-errors').html().trim()!="")?("<br/>"):(""));
+            text=$('#msg-errors').html().trim()+t;
+        }
+        $('#msg-errors').html(text + (msg?msg:'&nbsp;'));
     }
 };

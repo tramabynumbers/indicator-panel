@@ -13,10 +13,13 @@ var dataLoader={
 
     loadCSVFile: async (key)=>{
         let d;
-        await d3.csv("data/"+key+".csv").then(
-            (data, error)=>{
-                if (error) throw error;
+        let path="data/"+key+".csv";
+        await d3.csv(path).then(
+            (data)=>{
                 d=data;
+            },
+            (error)=>{
+                utils.displayError("Falha ao tentar ler o(s) arquivo(s) ("+path+")", true);
             }
         );
         return d;
@@ -63,13 +66,14 @@ var dataLoader={
                     dataLoader.loadCSVFile(key).then(
                         (csv)=>{
                             try {
+                                // ignore unreaded csv files to avoid error
+                                if(typeof csv == "undefined") csv=[];
                                 dataLoader.csvToJs(csv).then(
                                     (d)=>{
                                         resolve({key:key,values:d});
                                     }
                                 );
                             } catch (error) {
-                                console.error(error+"\nCSV data file format error for ("+key+".csv)");
                                 reject();
                             }
                         }
