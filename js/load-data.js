@@ -2,7 +2,7 @@
  * Using the appropriate data model to guide the loading of CSV data.
  */
 var dataLoader={
-    modelFilePath:"ivm_rmvale.json",// path to the data model file
+    modelFilePath:"isdcovid_PB.json",// path to the data model file
     dataModel:{},
     data:[],// store the type {key:"",values:[]}
 
