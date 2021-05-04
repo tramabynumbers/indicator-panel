@@ -28,7 +28,7 @@ var treeview = {
         let w = $('#treeview').width();
         let h = $('#treeview').height();
 
-        let margin = { top: 10, right: 10, bottom: 10, left: 80 },
+        let margin = { top: 10, right: 10, bottom: 10, left: 130 },
             width = w - margin.right - margin.left,
             height = h - margin.top - margin.bottom;
         treeview.i = 0;
@@ -78,7 +78,7 @@ var treeview = {
             links = treeview.tree.links(nodes);
 
         // Normalize for fixed-depth.
-        nodes.forEach(function (d) { d.y = d.depth * 180; });
+        nodes.forEach(function (d) { d.y = d.depth * 160; });
 
         // Update the nodes…
         var node = treeview.svg.selectAll("g.node")
