@@ -1,0 +1,39 @@
+{
+    "dataversion":"v1.0.0-beta",
+    "key":"Index-SaudeDemo-Covid",
+    "description":"Index SaúdeDemo da Covid",
+    "dimensions":[
+        {
+            "key":"DIMENSAO-I",
+            "description":"Dimensão I - indireamente relacionados a COVID-19",
+            "indicators":[
+                {
+                    "key":"SUB-I1",
+                    "description":"Indicadores de Oferta, de Acesso e de Situação de Saúde"
+                },
+                {
+                    "key":"SUB-I2",
+                    "description":"Indicadores Demográficos"
+                }
+            ]
+        },
+        {
+            "key":"DIMENSAO-II",
+            "description":"Dimensão II - diretamente relacionados a COVID-19",
+            "indicators":[
+                {
+                    "key":"SUB-II1",
+                    "description":"Indicadores de Mortalidade"
+                },
+                {
+                    "key":"SUB-II2",
+                    "description":"Indicadores de Mortalidade por COVID-19 e Gravidade Clínica"
+                },
+                {
+                    "key":"SUB-II3",
+                    "description":"Indicadores de Oferta, de Acesso e de Situação de Saúde (COVID-19)"
+                }
+            ]
+        }
+    ]
+}
