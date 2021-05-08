@@ -40,4 +40,6 @@ $(document).ready(()=>{
 $(window).on('resize', ()=>{
     // set map height
     utils.setMainRowHeight();
+    treeview.redraw();
+    // treeview.update(treeview.selectedNode);
 });
