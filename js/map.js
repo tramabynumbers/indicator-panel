@@ -7,6 +7,7 @@ var mainMap={
     mainLayer: null,// reference to main leaflet layer based on geojson raw data.
     info:L.control(),
     observer:null,
+    selectedFeature:null,
 
     init:()=>{
         return new rxjs.Observable(
@@ -126,15 +127,32 @@ var mainMap={
         mainMap.info.update();
     },
 
+    resetHighlightAll:()=>{
+        mainMap.mainLayer.eachLayer(
+            (layer)=>{
+                if(layer!=mainMap.selectedFeature) {
+                    mainMap.mainLayer.resetStyle(layer);
+                }
+            }
+        );
+    },
+
     zoomToFeature:(e)=>{
         mainMap.map.fitBounds(e.target.getBounds());
     },
 
+    onClick:(e)=>{
+        //mainMap.zoomToFeature(e);
+        mainMap.selectedFeature=e.target;
+        mainMap.highlightFeature(e);
+        mainMap.resetHighlightAll();
+    },
+
     onEachFeature:(feature, layer)=>{
         layer.on({
-            mouseover: mainMap.highlightFeature,
-            mouseout: mainMap.resetHighlight,
-            click: mainMap.zoomToFeature
+            // mouseover: mainMap.highlightFeature,
+            // mouseout: mainMap.resetHighlight,
+            click: mainMap.onClick
         });
     },
 
