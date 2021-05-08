@@ -5,6 +5,7 @@ var treeview = {
     csvName: null,
     observer: null,
     maxDepth: 6,
+    i: 0,// serial id for nodes
 
     selectedNodeChanges:()=>{
         return new rxjs.Observable(
@@ -39,34 +40,74 @@ var treeview = {
     },
 
     display: (d) => {
-
         treeview.makeJsonEntryData(d);
         let observable=treeview.selectedNodeChanges();
+        treeview.redraw();
+        return observable;
+    },
 
-        let w = $('#treeview').width();
-        let h = $('#treeview').height();
+    redraw: ()=>{
+        let to=(treeview.timeoutCtrl)?(200):(1);
+        clearTimeout(treeview.timeoutCtrl);
+        treeview.timeoutCtrl=setTimeout(
+            ()=>{
+                //let oldSelection=(treeview.selectedNode)?(treeview.selectedNode.key):(null);
+                let bounds=treeview.getBounds();
+                treeview.initTree(bounds);
+                treeview.initRoot(bounds.height);
+                // if(oldSelection) {
+                //     let node = treeview.getNodeByKey(oldSelection, treeview.root);
+                //     if(node) treeview.update(node);
+                // }
+            }
+        ,to);
+    },
 
-        let margin = { top: 10, right: 10, bottom: 10, left: 80 },
-            width = w - margin.right - margin.left,
-            height = h - margin.top - margin.bottom;
-        treeview.i = 0;
+    // getNodeByKey: (key, node)=>{
+    //     if(node.key==key) return node;
+    //     else if(node.children) {
+    //         return node.children.find(
+    //             (n)=>{
+    //                 return treeview.getNodeByKey(key, n);
+    //             }
+    //         );
+    //     }
+    // },
+
+    initTree: (bounds)=>{
+
+        let margin = treeview.getMargins();
 
         treeview.duration = 350;
         treeview.tree = d3v3.layout.tree()
-            .size([height, width]);
+            .size([bounds.height, bounds.width]);
 
         treeview.diagonal = d3v3.svg.diagonal()
             .projection(function (d) { return [d.y, d.x]; });
 
+        if(treeview.svg) {
+            d3v3.select("#treeview svg").remove();
+        }
+
         treeview.svg = d3v3.select("#treeview").append("svg")
-            .attr("width", width + margin.right + margin.left)
-            .attr("height", height + margin.top + margin.bottom)
+            .attr("width", bounds.width + margin.right + margin.left)
+            .attr("height", bounds.height + margin.top + margin.bottom)
             .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    },
 
-        treeview.initRoot(height);
+    getBounds: ()=>{
+        let w = $('#treeview').width();
+        let h = $('#treeview').height();
 
-        return observable;
+        let margin = treeview.getMargins(),
+            width = w - margin.right - margin.left,
+            height = h - margin.top - margin.bottom;
+        return {width:width,height:height};
+    },
+
+    getMargins: ()=>{
+        return { top: 10, right: 50, bottom: 10, left: 80 };
     },
 
     initRoot: (height) => {
@@ -90,6 +131,18 @@ var treeview = {
         d3v3.select(self.frameElement).style("height", height);
     },
 
+    resetBounds: ()=>{
+
+        let bounds = treeview.getBounds();
+        let margin = treeview.getMargins();
+
+        treeview.tree.size([bounds.height, bounds.width]);
+
+        treeview.svg
+            .attr("width", bounds.width + margin.right + margin.left)
+            .attr("height", bounds.height + margin.top + margin.bottom);
+    },
+
     update: (source) => {
 
         // store selected node
@@ -102,8 +155,8 @@ var treeview = {
             links = treeview.tree.links(nodes);
 
         // Normalize for fixed-depth.
-        let maxWidth=$('#treeview').width()/treeview.maxDepth;
-        nodes.forEach(function (d) { d.y = d.depth * parseInt(maxWidth); });
+        let maxWidth=$('#treeview').innerWidth()/(treeview.maxDepth+1);
+        nodes.forEach(function (d) { d.x0 = d.depth * parseInt(maxWidth); });
 
         // Update the nodes…
         var node = treeview.svg.selectAll("g.node")
@@ -199,11 +252,6 @@ var treeview = {
             d.children = d._children;
             d._children = null;
         }
-        /*
-        treeview.root.children.forEach(function(node) {
-            console.log(node, d, node === d);
-            //collapse(node);
-        });*/
         treeview.update(d);
     }
 };
