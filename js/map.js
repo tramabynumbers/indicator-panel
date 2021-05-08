@@ -61,9 +61,9 @@ var mainMap={
         };
 
         mainMap.info.update = function (props) {
-            this._div.innerHTML = '<h4>Índice de Vulnerabilidade Metropolitana à COVID-19</h4>' +  (props ?
-                '<b>' + props.nm + '</b><br />' + props.indicator + ' índice (entre 0 e 1)'
-                : 'passe o mause sobre os município');
+            this._div.innerHTML = (props ?
+                '<b>' + props.nm + '</b><br />' + props.indicator.toFixed(2) + ' índice (entre 0 e 1)'
+                : 'passe o mause sobre os municípios');
         };
 
         mainMap.info.addTo(mainMap.map);
