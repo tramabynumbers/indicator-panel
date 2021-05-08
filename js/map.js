@@ -12,7 +12,8 @@ var mainMap={
         return new rxjs.Observable(
             (observer)=>{
                 mainMap.observer=observer;
-                mainMap.fetchTheData();
+                mainMap.fetchConf();
+                mainMap.fetchData();
             },
             ()=>{
                 // on error, set .... as default
@@ -70,15 +71,26 @@ var mainMap={
 
 
     // get color depending on population indicator value
-    getColor:(d)=>{
-        return d > 0.8 ? '#800026' :
-                d > 0.7  ? '#BD0026' :
-                d > 0.6  ? '#E31A1C' :
-                d > 0.5  ? '#FC4E2A' :
-                d > 0.4  ? '#FD8D3C' :
-                d > 0.3  ? '#FEB24C' :
-                d > 0.1  ? '#FED976' :
-                            '#FFEDA0';
+    // getColor:(d)=>{
+    //     return d > 0.8 ? '#800026' :
+    //             d > 0.7  ? '#BD0026' :
+    //             d > 0.6  ? '#E31A1C' :
+    //             d > 0.5  ? '#FC4E2A' :
+    //             d > 0.4  ? '#FD8D3C' :
+    //             d > 0.3  ? '#FEB24C' :
+    //             d > 0.1  ? '#FED976' :
+    //                         '#FFEDA0';
+    // },
+
+    getLegendColor:(value)=>{
+        /** 
+         * Using the length of the color list from the conf file
+         * as the number of classes in the legend
+         */
+        let len = mainMap.legend.colors.length,
+        index = parseInt(value*len);
+        index = index>=len ? len-1 : index;
+        return mainMap.legend.colors[index];
     },
 
     style:(feature)=>{
@@ -87,8 +99,8 @@ var mainMap={
             opacity: 1,
             color: 'white',
             dashArray: '3',
-            fillOpacity: 0.7,
-            fillColor: mainMap.getColor(feature.properties.indicator)
+            fillOpacity: 1,
+            fillColor: mainMap.getLegendColor(feature.properties.indicator)
         };
     },
 
@@ -99,7 +111,7 @@ var mainMap={
             weight: 5,
             color: '#666',
             dashArray: '',
-            fillOpacity: 0.7
+            fillOpacity: 1
         });
 
         if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
@@ -126,7 +138,7 @@ var mainMap={
         });
     },
 
-    fetchTheData(){
+    fetchData(){
         fetch("data/rm-vale.geojson")
         .then(
             (response)=>{
@@ -137,7 +149,7 @@ var mainMap={
                         mainMap.geojson = data;
                         mainMap.createMap();
                         mainMap.createMainLayer(data);
-                        mainMap.addLegend();
+                        // mainMap.addLegend();
                         // on sucess
                         if(mainMap.observer) mainMap.observer.next();
                     }
@@ -148,6 +160,25 @@ var mainMap={
                 // mainMap.observer.
                 console.log("Falhou ao ler o geojson. Mapa incompleto.");
             },
+        );
+    },
+
+    fetchConf(){
+        fetch("conf/legend.json")
+        .then(
+            (response)=>{
+                // on sucess
+                response.json()
+                .then(
+                    (legend)=>{
+                        mainMap.legend = legend;
+                    }
+                );
+            },
+            ()=>{
+                // on reject
+                console.log("Falhou ao ler o arquivo de configuração de legendas do mapa.");
+            }
         );
     },
 
@@ -178,7 +209,7 @@ var mainMap={
                 to = grades[i + 1];
 
                 labels.push(
-                    '<i style="background:' + mainMap.getColor(from + 0.01) + '"></i> ' +
+                    '<i style="background:' + mainMap.getLegendColor(from + 0.01) + '"></i> ' +
                     from + (to ? '&ndash;' + to : '+'));
             }
 
