@@ -43,6 +43,7 @@ used by legend inside mapa (disabled)
 */
 /** Menu bar */
 .menu-bar{
+    display: inline-flex;
     background-color: #24292e;
     height: 55px;
     color: white;
@@ -51,7 +52,15 @@ used by legend inside mapa (disabled)
 .mb-row{
     padding: 0px !important;
 }
-
+.btn-group{
+    margin-left: auto;
+}
+.dropdown-menu.show{
+    z-index: 99999;
+}
+.main-txt-menu-bar{
+    margin-top: auto;
+}
 /** Tree view */
 /* #treeview{
     background-color: #f5f6f7;
