@@ -1,0 +1,23 @@
+{
+    "defaultSelectorId":"1",
+    "dataSet":[
+        {
+            "selectorId":"1",
+            "modelFilePath":"data/rmvale/model/ivm_rmvale.json",
+            "geoFilePath":"data/rmvale/geo/rm-vale.geojson",
+            "mapLegendFilePath":"data/rmvale/geo/legend.json",
+            "csvPath":"data/rmvale/csv/",
+            "shortName":"RM Vale(IVM-COVID-19)",
+            "panelTitle":"Índice de Vulnerabilidade Metropolitana à COVID-19"
+        },
+        {
+            "selectorId":"2",
+            "modelFilePath":"data/pb/model/pb.json",
+            "geoFilePath":"data/pb/geo/pb.geojson",
+            "mapLegendFilePath":"data/pb/geo/legend.json",
+            "csvPath":"data/pb/csv/",
+            "shortName":"COVID-19 PB",
+            "panelTitle":"Plataforma COVID-19 - Paraíba"
+        }
+    ]
+}

@@ -2,18 +2,19 @@
  * Using the appropriate data model to guide the loading of CSV data.
  */
 var dataLoader={
-    modelFilePath:"ivm_rmvale.json",// path to the data model file
     dataModel:{},
     data:[],// store the type {key:"",values:[]}
+    csvPath:null,
 
-    init:async ()=>{
-        let data=await dataLoader.loadAllData();
+    init:async (selectedDataSource)=>{
+        dataLoader.csvPath=selectedDataSource.csvPath;
+        let data=await dataLoader.loadAllData(selectedDataSource);
         return data;
     },
 
     loadCSVFile: async (key)=>{
         let d;
-        let path="data/"+key+".csv";
+        let path=dataLoader.csvPath+key+".csv";
         await d3.csv(path).then(
             (data)=>{
                 d=data;
@@ -25,9 +26,9 @@ var dataLoader={
         return d;
     },
 
-    loadDataModel: async ()=>{
+    loadDataModel: async (selectedDataSource)=>{
         let dm;
-        await d3.json("model/"+dataLoader.modelFilePath).then(
+        await d3.json(selectedDataSource.modelFilePath).then(
             (data, error)=>{
                 if (error) throw error;
                 dm=data;
@@ -49,9 +50,9 @@ var dataLoader={
         return data;
     },
 
-    loadAllData: async ()=>{
+    loadAllData: async (selectedDataSource)=>{
         let keys=[];
-        await dataLoader.loadDataModel().then(
+        await dataLoader.loadDataModel(selectedDataSource).then(
             (dm)=>{
                 dataLoader.dataModel=dm;
                 keys=dataLoader.getAllKeys(dm);

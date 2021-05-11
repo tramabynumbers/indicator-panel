@@ -9,12 +9,12 @@ var mainMap={
     observer:null,
     selectedFeature:null,
 
-    init:()=>{
+    init:(selectedDataSource)=>{
         return new rxjs.Observable(
             (observer)=>{
                 mainMap.observer=observer;
-                mainMap.fetchConf();
-                mainMap.fetchData();
+                mainMap.fetchConf(selectedDataSource);
+                mainMap.fetchData(selectedDataSource);
             },
             ()=>{
                 // on error, set .... as default
@@ -156,8 +156,8 @@ var mainMap={
         });
     },
 
-    fetchData(){
-        fetch("data/rm-vale.geojson")
+    fetchData(selectedDataSource){
+        fetch(selectedDataSource.geoFilePath)
         .then(
             (response)=>{
                 // on sucess
@@ -181,8 +181,8 @@ var mainMap={
         );
     },
 
-    fetchConf(){
-        fetch("conf/legend.json")
+    fetchConf(selectedDataSource){
+        fetch(selectedDataSource.mapLegendFilePath)
         .then(
             (response)=>{
                 // on sucess
