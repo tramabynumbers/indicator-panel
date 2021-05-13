@@ -5,6 +5,7 @@ var mainMap={
     map:null,// reference to leaflet map component
     geojson:null,// reference to geojson raw data loaded from file
     mainLayer: null,// reference to main leaflet layer based on geojson raw data.
+    defaultZoomLevel:8,// the zoom level used to reset view map
     info:L.control(),
     observer:null,
     selectedFeature:null,
@@ -24,7 +25,11 @@ var mainMap={
     },
 
     createMap:()=>{
-        mainMap.map = L.map('mainmap').setView([-23, -45], 8);
+        if (mainMap.map) {
+            mainMap.map.off();
+            mainMap.map.remove();
+        }
+        mainMap.map = L.map('mainmap').setView([-23, -45], mainMap.defaultZoomLevel);
 
         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
             maxZoom: 18,
@@ -206,6 +211,8 @@ var mainMap={
             style: mainMap.style,
             onEachFeature: mainMap.onEachFeature
         }).addTo(mainMap.map);
+
+        mainMap.map.setView(mainMap.mainLayer.getBounds().getCenter(),mainMap.defaultZoomLevel);
     },
 
     addAttribution:()=>{
