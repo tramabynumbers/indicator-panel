@@ -12,8 +12,8 @@
         },
         {
             "selectorId":"2",
-            "modelFilePath":"data/pb/model/pb.json",
-            "geoFilePath":"data/pb/geo/pb.geojson",
+            "modelFilePath":"data/pb/model/isdcovid_PB.json",
+            "geoFilePath":"data/pb/geo/munis-PB.geojson",
             "mapLegendFilePath":"data/pb/geo/legend.json",
             "csvPath":"data/pb/csv/",
             "shortName":"COVID-19 PB",
