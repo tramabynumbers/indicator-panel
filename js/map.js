@@ -75,19 +75,6 @@ var mainMap={
         mainMap.info.addTo(mainMap.map);
     },
 
-
-    // get color depending on population indicator value
-    // getColor:(d)=>{
-    //     return d > 0.8 ? '#800026' :
-    //             d > 0.7  ? '#BD0026' :
-    //             d > 0.6  ? '#E31A1C' :
-    //             d > 0.5  ? '#FC4E2A' :
-    //             d > 0.4  ? '#FD8D3C' :
-    //             d > 0.3  ? '#FEB24C' :
-    //             d > 0.1  ? '#FED976' :
-    //                         '#FFEDA0';
-    // },
-
     getLegendColor:(value)=>{
         /** 
          * Using the length of the color list from the conf file
@@ -147,7 +134,6 @@ var mainMap={
     },
 
     onClick:(e)=>{
-        //mainMap.zoomToFeature(e);
         mainMap.selectedFeature=e.target;
         mainMap.highlightFeature(e);
         mainMap.resetHighlightAll();
@@ -155,8 +141,6 @@ var mainMap={
 
     onEachFeature:(feature, layer)=>{
         layer.on({
-            // mouseover: mainMap.highlightFeature,
-            // mouseout: mainMap.resetHighlight,
             click: mainMap.onClick
         });
     },
@@ -172,7 +156,6 @@ var mainMap={
                         mainMap.geojson = data;
                         mainMap.createMap();
                         mainMap.createMainLayer(data);
-                        // mainMap.addLegend();
                         // on sucess
                         if(mainMap.observer) mainMap.observer.next();
                     }
@@ -180,7 +163,6 @@ var mainMap={
             },
             ()=>{
                 // on reject
-                // mainMap.observer.
                 console.log("Falhou ao ler o geojson. Mapa incompleto.");
             },
         );
