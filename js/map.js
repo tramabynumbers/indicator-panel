@@ -68,8 +68,8 @@ var mainMap={
 
         mainMap.info.update = function (props) {
             this._div.innerHTML = (props ?
-                '<b>' + props.nm + '</b><br />' + props.indicator.toFixed(2) + ' índice (entre 0 e 1)'
-                : 'passe o mause sobre os municípios');
+                '<b>' + props.nm + '</b><br />Valor do índice: ' + props.indicator.toFixed(2) + ' (entre 0 e 1)'
+                : 'Selecione um município');
         };
 
         mainMap.info.addTo(mainMap.map);
