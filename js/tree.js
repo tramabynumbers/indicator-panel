@@ -20,7 +20,18 @@ var treeview = {
     },
 
     nodesFromModel: (obj) => {
-        let node = { "key": "", "children": [] };
+        let node = {
+            "key": "",
+            "children": [],
+            "equal": (n)=>{
+                let that=node;
+                return (!that.parent && !n.parent)?
+                (that.key==n.key):
+                (that.parent && n.parent)?
+                (that.key==n.key && that.parent.key==n.parent.key):
+                (false);
+            }
+        };
         for (let prop in obj) {
             if (Object.prototype.toString.call(obj[prop]) == "[object Array]" && obj[prop].length) {
                 obj[prop].forEach(element => {
@@ -191,7 +202,7 @@ var treeview = {
             .attr("r", 4.5)
             .style("fill", function (d) {
                 let color = d._children ? "lightsteelblue" : "#fff";
-                color = d.key==treeview.selectedNode.key ? "#f00" : color;
+                color = d.equal(treeview.selectedNode) ? "#f00" : color;
                 return color;
             });
 
