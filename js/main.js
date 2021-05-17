@@ -1,6 +1,8 @@
+// To change, pass another value as parameter, utils.setMainRowHeight(offset Value)
+var offsetHeight=0.5;
 $(document).ready(()=>{
-    // set map height
-    utils.setMainRowHeight();
+    // set map height.
+    utils.setMainRowHeight(offsetHeight);
 
     dataSourceSelector.init().subscribe(
         (ds)=>{
@@ -14,7 +16,7 @@ $(document).ready(()=>{
 
 $(window).on('resize', ()=>{
     // set map height
-    utils.setMainRowHeight();
+    utils.setMainRowHeight(offsetHeight);
     treeview.redraw();
     // treeview.update(treeview.selectedNode);
 });
