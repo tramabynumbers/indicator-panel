@@ -2,22 +2,27 @@
     "dataversion":"v1.0.0-beta",
     "key":"IVM-COVID-19",
     "description":"Índice de Vulnerabilidade Metropolitana à COVID-19",
+    "externalfile":"ivm-covid-19.pdf",
     "nodes":[
         {
             "key":"AP",
             "description":"Ativos domiciliares, das famílias e populacionais",
+            "externalfile":"ap.pdf",
             "nodes":[
                 {
                     "key":"V01",
-                    "description":"Domicílios com rendimento domiciliar nominal mensal per capita de até 1 salário mínimo (s.m.)"
+                    "description":"Domicílios com rendimento domiciliar nominal mensal per capita de até 1 salário mínimo (s.m.)",
+                    "externalfile":"ap-v01.pdf"
                 },
                 {
                     "key":"V02",
-                    "description":"Idosos (60 anos e mais) com rendimento nominal mensal de até 1 s.m."
+                    "description":"Idosos (60 anos e mais) com rendimento nominal mensal de até 1 s.m.",
+                    "externalfile":"ap-v02.pdf"
                 },
                 {
                     "key":"V03",
-                    "description":"Idosos (60 anos e mais), responsáveis pelo domicílio, com rendimento nominal mensal de até 1 s.m."
+                    "description":"Idosos (60 anos e mais), responsáveis pelo domicílio, com rendimento nominal mensal de até 1 s.m.",
+                    "externalfile":"ap-v03.pdf"
                 },
                 {
                     "key":"V04",
@@ -44,6 +49,7 @@
         {
             "key":"AT",
             "description":"Ativos territoriais",
+            "externalfile":"at.pdf",
             "nodes":[
                 {
                     "key":"V01",
@@ -66,6 +72,7 @@
         {
             "key":"AS",
             "description":"Ativos do sistema de saúde",
+            "externalfile":"as.pdf",
             "nodes":[
                 {
                     "key":"V01",
