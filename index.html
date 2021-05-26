@@ -48,6 +48,40 @@
             <div class="col-12 detail">
                 Detalhes dos indicadores
             </div>
+            <div id="btn-pdf">
+                <a href="#" onclick="utils.displayPdf('data/rmvale/pdf/at.pdf')" role="button" class="btn btn-primary" data-toggle="modal">Ver arquivo PDF</a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+               
+                <div class="modal fade" id="display-pdf" role="dialog" aria-labelledby="pdfviewer" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="pdfviewer">
+                                    Modal title
+                                </h5> 
+                                <button type="button" class="close" data-dismiss="modal">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <iframe id="pdffile" src=""></iframe>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                    Fechar
+                                </button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                
+            </div>
         </div>
 
     </div>
