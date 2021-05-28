@@ -75,6 +75,17 @@ used by legend inside mapa (disabled)
     text-align: end;
 }
 
+/** Detail bar */
+.footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #24292e !important;
+    color: #fafbfc;
+    width: 100%;
+    text-align: center;
+}
+
 /** modal window */
 iframe{
     width: -webkit-fill-available;
