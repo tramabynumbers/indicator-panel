@@ -15,6 +15,10 @@ var treeview = {
         );
     },
 
+    getSelected:()=>{
+        return treeview.selectedNode;
+    },
+
     makeJsonEntryData: (d) => {
         treeview.jsonEntryData = treeview.nodesFromModel(d);
     },
@@ -44,6 +48,9 @@ var treeview = {
                 if (prop == "description") {
                     node["description"] = obj[prop];
                 }
+                if (prop == "externalfile") {
+                    node["externalfile"] = obj[prop];
+                }
             }
         }
         if (!node["children"].length) delete node.children;
@@ -52,10 +59,24 @@ var treeview = {
 
     display: (d) => {
         treeview.makeJsonEntryData(d);
-        let observable=treeview.selectedNodeChanges();
+        treeview.observable=treeview.selectedNodeChanges();
         treeview.redraw();
-        return observable;
+        return treeview.observable;
     },
+
+    // onSelectedNode: (callbackfn)=>{
+    //     if(treeview.observable)
+    //         treeview.observable.subscribe(
+    //             (node)=>{
+    //                 console.log("on select node"+node.key);
+    //                 callbackfn(node);
+    //             },
+    //             ()=>{
+    //                 // on error...
+    //                 console.log("on select node error");
+    //             }
+    //         );
+    // },
 
     redraw: ()=>{
         let to=(treeview.timeoutCtrl)?(200):(1);

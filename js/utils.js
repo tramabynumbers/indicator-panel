@@ -25,21 +25,5 @@ var utils={
             text=$('#msg-errors').html().trim()+t;
         }
         $('#msg-errors').html(text + (msg?msg:'&nbsp;'));
-    },
-
-    /**
-     * Open a modal window to display a PDF file
-     * @param {*} file, the name and path of file
-     */
-    displayPdf:(file)=>{
-        $('#pdffile').height(0)
-        $('#display-pdf').modal('show');
-        window.setTimeout(
-            ()=>{
-                let height=parseInt((window.innerHeight-$('.modal-dialog').height())*0.95);
-                $('#pdffile').height(height);
-                $('#pdffile').attr('src',file);
-            },200
-        );
     }
 };

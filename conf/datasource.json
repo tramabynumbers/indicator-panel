@@ -7,6 +7,7 @@
             "geoFilePath":"data/rmvale/geo/rm-vale.geojson",
             "mapLegendFilePath":"data/rmvale/geo/legend.json",
             "csvPath":"data/rmvale/csv/",
+            "pdfPath":"data/rmvale/pdf/",
             "shortName":"RM Vale(IVM-COVID-19)",
             "panelTitle":"Índice de Vulnerabilidade Metropolitana à COVID-19"
         },
@@ -16,6 +17,7 @@
             "geoFilePath":"data/pb/geo/munis-PB.geojson",
             "mapLegendFilePath":"data/pb/geo/legend.json",
             "csvPath":"data/pb/csv/",
+            "pdfPath":"data/pb/pdf/",
             "shortName":"COVID-19 PB",
             "panelTitle":"Plataforma COVID-19 - Paraíba"
         }

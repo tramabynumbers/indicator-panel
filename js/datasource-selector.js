@@ -61,9 +61,13 @@ var dataSourceSelector={
     },
 
     onDataSourceChange:(e)=>{
-        let id=e.target.id,
-        d=dataSourceSelector.getDataSourceById(id);
+        dataSourceSelector.selectedId=e.target.id,
+        d=dataSourceSelector.getSelected();
         dataSourceSelector.applyDataSourceChange(d);
+    },
+
+    getSelected:()=>{
+        return dataSourceSelector.getDataSourceById(dataSourceSelector.selectedId);
     },
 
     getDataSourceById:(id)=>{
@@ -94,6 +98,7 @@ var dataSourceSelector={
                                     (el,i)=>{
                                         if(el.key==value){
                                             mainMap.updateMainLayer(d[0][i]);
+                                            detail.setSelectedIndicator(d[0][i]).updatePanel();
                                         }
                                     });
                             },

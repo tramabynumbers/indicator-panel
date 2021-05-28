@@ -71,6 +71,11 @@ used by legend inside mapa (disabled)
     padding: 10px;
     border-top: 1px solid #c8c8c8;
 }
+.detail-pdf{
+    text-align: end;
+}
+
+/** modal window */
 iframe{
     width: -webkit-fill-available;
     border: none;
