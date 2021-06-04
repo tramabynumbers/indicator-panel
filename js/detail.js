@@ -12,11 +12,11 @@ var detail={
     },
 
     /**
-     * Define the geometry selected in the map
-     * @param {geocode} geocode, the identifier of the selected geometry in the map
+     * Define the geometry selected in the map.
+     * @param {geomInfo} geomInfo, the informations of the selected geometry in the map.
      */
-    setSelectedGeom:(geocode)=>{
-        detail.selectedGeom=geocode;
+    setSelectedGeom:(geomInfo)=>{
+        detail.selectedGeom=geomInfo;
         return detail;
     },
 
@@ -25,11 +25,10 @@ var detail={
      * 
      */
     updatePanel:()=>{
+        let detailHeader="Descrição do indicador está ausente";
         if(detail.selectedIndicator){
             if(treeview.getSelected().description)
-                $('#detail-description').html(treeview.getSelected().description);
-            else
-                $('#detail-description').html("Descrição do indicador está ausente");
+                detailHeader=treeview.getSelected().description;
 
             if(treeview.getSelected().externalfile) {
                 $('#pdf-link').html("Abrir arquivo PDF");
@@ -37,14 +36,18 @@ var detail={
                 $('#pdf-nolink').attr('style','display:none');
             }else {
                 $('#pdf-link').attr('style','display:none');
-                $('#pdf-nolink').html("PDF do indicador está ausente");
+                $('#pdf-nolink').html("PDF ausente");
                 $('#pdf-nolink').attr('style','display:inline');
             }
+        }
 
-        }
         if(detail.selectedGeom){
-            console.log("Seleção no mapa");
+            detailHeader=detailHeader+' <b>['+treeview.getSelected().key+'='+
+            detail.selectedGeom.indicator.toFixed(2)+']</b>'+
+            ' para o município <b>'+detail.selectedGeom.nm+'</b>';
         }
+
+        $('#detail-description').html(detailHeader);
     },
 
     /**

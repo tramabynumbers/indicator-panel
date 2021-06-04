@@ -70,12 +70,12 @@ used by legend inside mapa (disabled)
 .detail-bar{
     padding: 10px;
     border-top: 1px solid #c8c8c8;
+    background-color: #f3f3f3 !important;
 }
 .detail-pdf{
     text-align: end;
 }
 .detail-body{
-    background-color: #ece9e4 !important;
     min-height: calc(100% - 10px);
 }
 

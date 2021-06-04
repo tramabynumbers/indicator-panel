@@ -70,6 +70,7 @@ var mainMap={
             this._div.innerHTML = (props ?
                 '<b>' + props.nm + '</b><br />Valor do índice: ' + props.indicator.toFixed(2) + ' (entre 0 e 1)'
                 : 'Selecione um município');
+            if(props) detail.setSelectedGeom(props).updatePanel();
         };
 
         mainMap.info.addTo(mainMap.map);
