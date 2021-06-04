@@ -98,12 +98,12 @@ var mainMap={
         };
     },
 
-    highlightFeature:(e)=>{
-        var layer = e.target;
+    highlightFeature:()=>{
+        let layer = mainMap.selectedFeature;
 
         layer.setStyle({
-            weight: 5,
-            color: '#666',
+            weight: 3,
+            color: '#555',
             dashArray: '',
             fillOpacity: 1
         });
@@ -136,11 +136,16 @@ var mainMap={
 
     onClick:(e)=>{
         mainMap.selectedFeature=e.target;
-        mainMap.highlightFeature(e);
+        mainMap.highlightFeature();
         mainMap.resetHighlightAll();
     },
 
     onEachFeature:(feature, layer)=>{
+        if(mainMap.selectedFeature && feature.properties.gc==mainMap.selectedFeature.feature.properties.gc){
+            setTimeout(()=>{
+                mainMap.onClick({target:layer});
+            },190);
+        }
         layer.on({
             click: mainMap.onClick
         });
