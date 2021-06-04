@@ -10,6 +10,21 @@ var utils={
         let mainRowHeight=window.innerHeight*offset;
         $('#mainmap').height(mainRowHeight);
         $('#treeview').height(mainRowHeight);
+        utils.setDetailRowHeight();
+    },
+
+    /**
+     * Set the height for the detail body area using the total remaining height.
+     */
+    setDetailRowHeight:()=>{
+        let hh=$('.mb-row').outerHeight(),
+        mh=$('.main-row').outerHeight(),
+        dh=$('.detail-bar').outerHeight(),
+        df=$('.footer').outerHeight(),
+        defaultPaddingRow=20;// To see or change, go to the CSS rules
+
+        let remainHeight=window.innerHeight-hh-mh-dh-df-defaultPaddingRow;
+        $('.detail-body').height(remainHeight);
     },
 
     /**
