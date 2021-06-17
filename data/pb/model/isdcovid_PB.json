@@ -1,5 +1,5 @@
 {
-    "dataversion":"v1.0.0-beta",
+    "dataversion":"v1.0.0-rc1",
     "key":"ISD-COVID-19",
     "description":"Index SaúdeDemo da Covid",
     "nodes":[
