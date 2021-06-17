@@ -70,7 +70,7 @@
                "description":"Indicadores de Mortalidade",
                "nodes":[
                   {
-                     "key":"OBITOSCAUSA",
+                     "key":"OBITOSCAUSAS",
                      "description":"Causas de óbitos",
                      "nodes":[
                         {
