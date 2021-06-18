@@ -42,7 +42,7 @@
                      "nodes":[
                         {
                            "key":"V10",
-                           "description":"Densidade Demográfica"
+                           "description":"Densidade Demográfica",
                            "externalfile":"dens_demog.pdf"
                         },
                         {
