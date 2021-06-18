@@ -10,7 +10,7 @@
             {
                "key":"SUB-I1",
                "description":"Indicadores de Oferta, de Acesso e de Situação de Saúde",
-               "externalfile":"Ficha_DimI1",
+               "externalfile":"Ficha_DimI1.pdf",
                "nodes":[
                   {
                      "key":"OFERTA",
