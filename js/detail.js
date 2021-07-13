@@ -26,6 +26,7 @@ var detail={
      */
     updatePanel:()=>{
         let detailHeader="Descrição do indicador está ausente";
+        let children="A seleção não possui indicadores derivados";
         if(detail.selectedIndicator){
             if(treeview.getSelected().description)
                 detailHeader=treeview.getSelected().description;
@@ -39,6 +40,8 @@ var detail={
                 $('#pdf-nolink').html("PDF ausente");
                 $('#pdf-nolink').attr('style','display:inline');
             }
+            if(treeview.hasChildren())
+                children=detail.getChildrenList(treeview.getChildren());
         }
 
         if(detail.selectedGeom){
@@ -48,6 +51,22 @@ var detail={
         }
 
         $('#detail-description').html(detailHeader);
+        $('#detail-children').html(children);
+    },
+
+    /**
+     * Get the HTML list of the child nodes of the selected node.
+     * @param {Array} childNodes The child nodes of the selected node
+     * @returns The HTML list representation
+     */
+    getChildrenList:(childNodes)=>{
+        let l="<span>Lista dos nós derivados</span><ul>";
+        childNodes.forEach(
+            (n)=>{
+                l=l+"<li>["+n.key+"] - "+n.description+"</li>";
+            }
+        );
+        return l+"</ul>";
     },
 
     /**
