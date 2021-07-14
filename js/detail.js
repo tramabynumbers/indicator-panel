@@ -48,7 +48,10 @@ var detail={
             detailHeader=detailHeader+' <b>['+treeview.getSelected().key+'='+
             detail.selectedGeom.indicator.toFixed(2)+']</b>'+
             ' para o município <b>'+detail.selectedGeom.nm+'</b>';
-            radar.draw(detail.getChildrenData(treeview.getChildren()));
+            if(treeview.hasChildren())
+                radar.draw(detail.getChildrenData(treeview.getChildren()));
+            else
+                radar.clean();
         }
 
         $('#detail-description').html(detailHeader);
@@ -87,7 +90,7 @@ var detail={
         let path=dataSourceSelector.getSelected().pdfPath;// the base path to read pdf files
         let file=treeview.getSelected().externalfile; // the name of pdf file
         $('#pdfviewer').html(treeview.getSelected().description);
-        $('#pdffile').height(0)
+        $('#pdffile').height(0);
         $('#display-pdf').modal('show');
         window.setTimeout(
             ()=>{

@@ -1,6 +1,6 @@
 var radar=radar||{};
 var radar={
-    margin:{top: 30, right: 20, bottom: 20, left: 25},
+    margin:{top: 30, right: 35, bottom: 30, left: 35},
     width:0,
     height:0,
 
@@ -25,6 +25,10 @@ var radar={
      */
     draw:(data)=>{
         RadarChart(".radar-chart", [data], radar.chartOptions);
+    },
+
+    clean:()=>{
+        d3v3.select(".radar-chart").select("svg").remove();
     }
 };
 radar.init();
