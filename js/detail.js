@@ -86,6 +86,7 @@ var detail={
      displayPdf:()=>{
         let path=dataSourceSelector.getSelected().pdfPath;// the base path to read pdf files
         let file=treeview.getSelected().externalfile; // the name of pdf file
+        $('#pdfviewer').html(treeview.getSelected().description);
         $('#pdffile').height(0)
         $('#display-pdf').modal('show');
         window.setTimeout(
