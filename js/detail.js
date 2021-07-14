@@ -48,6 +48,7 @@ var detail={
             detailHeader=detailHeader+' <b>['+treeview.getSelected().key+'='+
             detail.selectedGeom.indicator.toFixed(2)+']</b>'+
             ' para o município <b>'+detail.selectedGeom.nm+'</b>';
+            radar.draw(detail.getChildrenData(treeview.getChildren()));
         }
 
         $('#detail-description').html(detailHeader);
@@ -67,6 +68,16 @@ var detail={
             }
         );
         return l+"</ul>";
+    },
+
+    getChildrenData:(childNodes)=>{
+        let d=[];
+        childNodes.forEach(
+            (n)=>{
+                d.push({axis:n.key,value:(n.value || 0.5)});
+            }
+        );
+        return d;
     },
 
     /**
