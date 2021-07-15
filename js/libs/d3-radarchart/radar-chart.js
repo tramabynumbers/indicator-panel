@@ -104,7 +104,7 @@ function RadarChart(id, data, options) {
 	   .attr("fill", "#737373")
 	   .text(function(d,i) {
            //return Format(maxValue * d/cfg.levels);
-           return maxValue * d/cfg.levels;
+           return parseFloat( (maxValue * d/cfg.levels).toFixed(1));
         });
 
 	/////////////////////////////////////////////////////////
