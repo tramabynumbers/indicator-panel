@@ -14,6 +14,7 @@ var mainMap={
         return new rxjs.Observable(
             (observer)=>{
                 mainMap.observer=observer;
+                mainMap.setExternalLegend(selectedDataSource);
                 mainMap.fetchConf(selectedDataSource);
                 mainMap.fetchData(selectedDataSource);
             },
@@ -231,5 +232,11 @@ var mainMap={
         };
 
         legend.addTo(mainMap.map);
+    },
+
+    setExternalLegend:(selectedDataSource)=>{
+        $('.legendtxt1').html(selectedDataSource.mapLegendTxt.left);
+        $('.legendtxt2').html(selectedDataSource.mapLegendTxt.right);
+        $('.legendmap')[0].src=selectedDataSource.mapLegendImgPath;
     }
 };
