@@ -1,11 +1,13 @@
 {
-    "defaultSelectorId":"1",
+    "defaultSelectorId":"2",
     "dataSet":[
         {
             "selectorId":"1",
             "modelFilePath":"data/rmvale/model/ivm_rmvale.json",
             "geoFilePath":"data/rmvale/geo/rm-vale.geojson",
             "mapLegendFilePath":"data/rmvale/geo/legend.json",
+            "mapLegendImgPath":"data/rmvale/geo/legend.png",
+            "mapLegendTxt":{"left":"Menor vulnerabilidade (índice 0)","right":"Maior vulnerabilidade (índice 1)"},
             "csvPath":"data/rmvale/csv/",
             "pdfPath":"data/rmvale/pdf/",
             "shortName":"RM Vale(IVM-COVID-19)",
@@ -16,6 +18,8 @@
             "modelFilePath":"data/pb/model/isdcovid_PB.json",
             "geoFilePath":"data/pb/geo/munis-PB.geojson",
             "mapLegendFilePath":"data/pb/geo/legend.json",
+            "mapLegendImgPath":"data/rmvale/geo/legend.png",
+            "mapLegendTxt":{"left":"Menor vulnerabilidade (índice 0)","right":"Maior vulnerabilidade (índice 1)"},
             "csvPath":"data/pb/csv/",
             "pdfPath":"data/pb/pdf/",
             "shortName":"COVID-19 PB",

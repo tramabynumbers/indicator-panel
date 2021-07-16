@@ -9,6 +9,7 @@ var dataLoader={
     init:async (selectedDataSource)=>{
         dataLoader.csvPath=selectedDataSource.csvPath;
         let data=await dataLoader.loadAllData(selectedDataSource);
+        dataLoader.data=data;
         return data;
     },
 
@@ -103,6 +104,21 @@ var dataLoader={
             }
         }
         return keys;
+    },
+
+    getCSVByKey: (key)=>{
+        return dataLoader.data[0].find(
+            (d)=>{
+                if(d.key==key) return d;
+            }
+        );
+    },
+
+    getIndicatorValuebyKeyToSelectedGeom: (key)=>{
+        var csv=dataLoader.getCSVByKey(treeview.getSelected().key+"-"+key);
+        // get code to selected geom
+        let geocode=detail.selectedGeom.gc;
+        return (csv && csv.values.length && geocode)?(parseFloat(csv.values[geocode].toFixed(2))):(null);
     }
 
 };

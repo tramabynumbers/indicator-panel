@@ -14,6 +14,7 @@ var mainMap={
         return new rxjs.Observable(
             (observer)=>{
                 mainMap.observer=observer;
+                mainMap.setExternalLegend(selectedDataSource);
                 mainMap.fetchConf(selectedDataSource);
                 mainMap.fetchData(selectedDataSource);
             },
@@ -68,7 +69,7 @@ var mainMap={
 
         mainMap.info.update = function (props) {
             this._div.innerHTML = (props ?
-                '<b>' + props.nm + '</b><br />Valor do índice: ' + props.indicator.toFixed(2) + ' (entre 0 e 1)'
+                '<b>' + props.nm + '</b><br />Valor do índice: ' + ((props.indicator)?(props.indicator.toFixed(2)):("inexistente")) + ' (entre 0 e 1)'
                 : 'Selecione um município');
             if(props) detail.setSelectedGeom(props).updatePanel();
         };
@@ -231,5 +232,11 @@ var mainMap={
         };
 
         legend.addTo(mainMap.map);
+    },
+
+    setExternalLegend:(selectedDataSource)=>{
+        $('.legendtxt1').html(selectedDataSource.mapLegendTxt.left);
+        $('.legendtxt2').html(selectedDataSource.mapLegendTxt.right);
+        $('.legendmap')[0].src=selectedDataSource.mapLegendImgPath;
     }
 };

@@ -29,6 +29,8 @@ The short name is used to display an item in the data set list and the panel tit
     "modelFilePath":"data/rmvale/model/ivm_rmvale.json",
     "geoFilePath":"data/rmvale/geo/rm-vale.geojson",
     "mapLegendFilePath":"data/rmvale/geo/legend.json",
+    "mapLegendImgPath":"data/rmvale/geo/legend.png",
+    "mapLegendTxt":{"left":"Menor vulnerabilidade (índice 0)","right":"Maior vulnerabilidade (índice 1)"},
     "csvPath":"data/rmvale/csv/",
     "shortName":"RM Vale(IVM-COVID-19)",
     "panelTitle":"Índice de Vulnerabilidade Metropolitana à COVID-19"
@@ -46,6 +48,8 @@ An example of the complete configuration file.
             "modelFilePath":"data/datadir_name/model/the_indicators_model.json",
             "geoFilePath":"data/datadir_name/geo/the_geographic_data_file.geojson",
             "mapLegendFilePath":"data/datadir_name/geo/the_legend_colors.json",
+            "mapLegendImgPath":"data/datadir_name/geo/an_external_legend_img.png",
+            "mapLegendTxt":{"left":"the text on the left side","right":"the text on the right side"},
             "csvPath":"data/datadir_name/csv/",
             "shortName":"A short name to display in the dataset list selector",
             "panelTitle":"Title text to be displayed on the main bar"
@@ -55,6 +59,8 @@ An example of the complete configuration file.
             "modelFilePath":"data/another_dir_name/model/the_indicators_model.json",
             "geoFilePath":"data/another_dir_name/geo/the_geographic_data_file.geojson",
             "mapLegendFilePath":"data/another_dir_name/geo/the_legend_colors.json",
+            "mapLegendImgPath":"data/another_dir_name/geo/an_external_legend_img.png",
+            "mapLegendTxt":{"left":"the text on the left side","right":"the text on the right side"},
             "csvPath":"data/another_dir_name/csv/",
             "shortName":"A short name to display in the dataset list selector",
             "panelTitle":"Title text to be displayed on the main bar"

@@ -6,6 +6,7 @@
 <link href="css/libs/leaflet.min.css" rel="stylesheet"/>
 <link href="css/main.css" rel="stylesheet"/>
 <link href="css/tree.css" rel="stylesheet"/>
+<link href="css/radar.css" rel="stylesheet"/>
 
 <title>IVM COVID</title>
 <link rel="shortcut icon" type="image/icon" href="img/favicon.ico"/>
@@ -36,7 +37,7 @@
             <div class="col-7 mm-col">
                 <div id="mainmap"></div>
                 <div>
-                    <img class="legendmap" src="img/legend2.png">
+                    <img class="legendmap" src="img/example.png">
                     <div class="legendtxt">
                         <div class="legendtxt1">Menor vulnerabilidade (índice 0)</div>
                         <div class="legendtxt2">Maior vulnerabilidade (índice 1)</div>
@@ -55,19 +56,16 @@
         </div>
 
         <div class="row detail-body">
-            <div class="col-2">
-                Maior e menor vulnerabilidade. Informação do contexto do intervalo de valores.
-            </div>
-            <div class="col-4">
-                Gráfico de teia
+            <div class="col-6">
+                <div class="radar-chart"></div>
             </div>
             <div class="col-6">
-                Lista dos nós filhos do nó selecionado.
+                <div id="detail-children"></div>
             </div>
         </div>
 
         <div class="footer">
-            Rodapé
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este obra está licenciada com uma Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>.
         </div>
 
         <div class="row">
@@ -110,6 +108,7 @@
     <script src="js/libs/d3v3/d3.min.js"></script>
     <script src="js/libs/d3v5/d3.v5.min.js"></script>
     <script src="js/libs/rxjs/rxjs.umd.min.js"></script>
+    <script src="js/libs/d3-radarchart/radar-chart.js"></script>
 
     <script src="js/main.js"></script>
     <script src="js/utils.js"></script>
@@ -118,6 +117,7 @@
     <script src="js/data-loader.js"></script>
     <script src="js/tree.js"></script>
     <script src="js/detail.js"></script>
+    <script src="js/radar.js"></script>
     
 </body>
 </html>

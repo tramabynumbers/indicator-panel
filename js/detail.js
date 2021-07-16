@@ -26,6 +26,7 @@ var detail={
      */
     updatePanel:()=>{
         let detailHeader="Descrição do indicador está ausente";
+        let children="A seleção não possui indicadores derivados";
         if(detail.selectedIndicator){
             if(treeview.getSelected().description)
                 detailHeader=treeview.getSelected().description;
@@ -39,15 +40,47 @@ var detail={
                 $('#pdf-nolink').html("PDF ausente");
                 $('#pdf-nolink').attr('style','display:inline');
             }
+            if(treeview.hasChildren())
+                children=detail.getChildrenList(treeview.getChildren());
         }
 
         if(detail.selectedGeom){
             detailHeader=detailHeader+' <b>['+treeview.getSelected().key+'='+
-            detail.selectedGeom.indicator.toFixed(2)+']</b>'+
+            ((detail.selectedGeom.indicator)?(detail.selectedGeom.indicator.toFixed(2)):('indefinido'))+']</b>'+
             ' para o município <b>'+detail.selectedGeom.nm+'</b>';
+            if(treeview.hasChildren())
+                radar.draw(detail.getChildrenData(treeview.getChildren()));
+            else
+                radar.clean();
         }
 
         $('#detail-description').html(detailHeader);
+        $('#detail-children').html(children);
+    },
+
+    /**
+     * Get the HTML list of the child nodes of the selected node.
+     * @param {Array} childNodes The child nodes of the selected node
+     * @returns The HTML list representation
+     */
+    getChildrenList:(childNodes)=>{
+        let l="<span>Lista dos nós derivados</span><ul>";
+        childNodes.forEach(
+            (n)=>{
+                l=l+"<li>["+n.key+"] - "+n.description+"</li>";
+            }
+        );
+        return l+"</ul>";
+    },
+
+    getChildrenData:(childNodes)=>{
+        let d=[];
+        childNodes.forEach(
+            (n)=>{
+                d.push({axis:n.key,value:(dataLoader.getIndicatorValuebyKeyToSelectedGeom(n.key) || 0)});
+            }
+        );
+        return d;
     },
 
     /**
@@ -56,7 +89,8 @@ var detail={
      displayPdf:()=>{
         let path=dataSourceSelector.getSelected().pdfPath;// the base path to read pdf files
         let file=treeview.getSelected().externalfile; // the name of pdf file
-        $('#pdffile').height(0)
+        $('#pdfviewer').html(treeview.getSelected().description);
+        $('#pdffile').height(0);
         $('#display-pdf').modal('show');
         window.setTimeout(
             ()=>{

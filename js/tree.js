@@ -15,8 +15,26 @@ var treeview = {
         );
     },
 
+    /**
+     * Get selected node
+     */
     getSelected:()=>{
         return treeview.selectedNode;
+    },
+
+    /**
+     * Are there children for the selected node?
+     */
+    hasChildren:()=>{
+        return (treeview.selectedNode.children && treeview.selectedNode.children.length) ||
+        (treeview.selectedNode._children && treeview.selectedNode._children.length);
+    },
+
+    /**
+     * Get children for selected node
+     */
+    getChildren:()=>{
+        return (treeview.selectedNode.children)?(treeview.selectedNode.children):(treeview.selectedNode._children);
     },
 
     makeJsonEntryData: (d) => {
