@@ -1,0 +1,143 @@
+{
+   "dataversion":"v1.0.0-beta",
+   "key":"ISD-COVID-19",
+   "description":"Index SaúdeDemo da Covid",
+   "nodes":[
+      {
+         "key":"DIMENSAO-I",
+         "description":"Dimensão I - indireamente relacionados a COVID-19",
+         "nodes":[
+            {
+               "key":"SUB-I1",
+               "description":"Indicadores de Oferta, de Acesso e de Situação de Saúde",
+               "externalfile":"Ficha_DimI1.pdf",
+               "nodes":[
+                  {
+                     "key":"OFERTA",
+                     "description":"Oferta (recursos humanos e capacidade)",
+                     "nodes":[
+                        {
+                           "key":"V01",
+                           "description":"Médicos/1000 hab"
+                        },
+                        {
+                           "key":"V02",
+                           "description":"Enfermeiros/1000 hab"
+                        },
+                        {
+                           "key":"V03",
+                           "description":"Leitos hospitalares de internações /1000 hab"
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "key":"SUB-I2",
+               "description":"Indicadores Demográficos",
+               "nodes":[
+                  {
+                     "key":"DEMOG",
+                     "description":"Demográfica",
+                     "nodes":[
+                        {
+                           "key":"V10",
+                           "description":"Densidade Demográfica",
+                           "externalfile":"dens_demog.pdf"
+                        },
+                        {
+                           "key":"V11",
+                           "description":"Razão de Sexo"
+                        },
+                        {
+                           "key":"V12",
+                           "description":"Proporção  População 60 anos e mais"
+                        },
+                        {
+                           "key":"V13",
+                           "description":"Grau de Urbanização"
+                        }
+                     ]
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "key":"DIMENSAO-II",
+         "description":"Dimensão II - diretamente relacionados a COVID-19",
+         "nodes":[
+            {
+               "key":"SUB-II1",
+               "description":"Indicadores de Mortalidade",
+               "nodes":[
+                  {
+                     "key":"OBITOSCAUSA",
+                     "description":"Causas de óbitos",
+                     "nodes":[
+                        {
+                           "key":"V14",
+                           "description":"Proporção de óbitos por causas respiratórias"
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "key":"SUB-II2",
+               "description":"Indicadores de Mortalidade por COVID-19 e Gravidade Clínica",
+               "nodes":[
+                  {
+                     "key":"MORTALIDADECOVID",
+                     "description":"Mortalidade por COVID-19",
+                     "nodes":[
+                        {
+                           "key":"V15",
+                           "description":"Taxa de Prevalência de casos confirmados da Covid"
+                        },
+                        {
+                           "key":"V16",
+                           "description":"Proporção de óbitos por COVID-19"
+                        }
+                     ]
+                  },
+                  {
+                     "key":"GRAVCLINICA",
+                     "description":"Gravidade Clínica",
+                     "nodes":[
+                        {
+                           "key":"V17",
+                           "description":"Taxa de Letalidade"
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "key":"SUB-II3",
+               "description":"Indicadores de Oferta, de Acesso e de Situação de Saúde (COVID-19)",
+               "nodes":[
+                  {
+                     "key":"HOSPITALAR",
+                     "description":"Hospitalar",
+                     "nodes":[
+                        {
+                           "key":"V18",
+                           "description":"Hospitalizados por COVID-19"
+                        },
+                        {
+                           "key":"V19",
+                           "description":"Internados em UTI por COVID-19"
+                        },
+                        {
+                           "key":"V20",
+                           "description":"Hospitalizados em Enfermaria por COVID-19"
+                        }
+                     ]
+                  }
+               ]
+            }
+         ]
+      }
+   ]
+}

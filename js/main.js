@@ -1,15 +1,22 @@
+// To change, pass another value as parameter, utils.setMainRowHeight(offset Value)
+var offsetHeight=0.5;
 $(document).ready(()=>{
-    // set map height
-    utils.setMapHeight();
-    mainMap.init();
-    dataLoader.init().then(
-        (d)=>{
-            mainMap.updateMainLayer(d[0][0]);
-        }
-    );
-});
+    // set map height.
+    utils.setMainRowHeight(offsetHeight);
+
+    dataSourceSelector.init().subscribe(
+        (ds)=>{
+            let d=dataSourceSelector.getDataSourceById(ds.defaultSelectorId);
+            dataSourceSelector.applyDataSourceChange(d);
+        },
+        (e)=> { console.log('onError: %s', e); },
+        ()=> { console.log('onCompleted'); }
+    );// datasource loader end
+});// window ready end
 
 $(window).on('resize', ()=>{
     // set map height
-    utils.setMapHeight();
+    utils.setMainRowHeight(offsetHeight);
+    treeview.redraw();
+    // treeview.update(treeview.selectedNode);
 });

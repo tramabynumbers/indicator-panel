@@ -5,42 +5,119 @@
 <link href="css/libs/bootstrap-4.3.1/bootstrap.min.css" rel="stylesheet"/>
 <link href="css/libs/leaflet.min.css" rel="stylesheet"/>
 <link href="css/main.css" rel="stylesheet"/>
+<link href="css/tree.css" rel="stylesheet"/>
+<link href="css/radar.css" rel="stylesheet"/>
 
 <title>IVM COVID</title>
+<link rel="shortcut icon" type="image/icon" href="img/favicon.ico"/>
 </head>
 <body>
     <div class="container-fluid">
-        <div class="row">
+        <div id="errors" style="display: none;" class="row">
+            <div class="col-12">
+                <div id="msg-errors" class="alert alert-danger" role="alert">
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-row">
             <div class="col-12 menu-bar">
-                Menu bar
+                <h4 id="main-txt-menu-bar"></h4>
+                <div class="btn-group">
+                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dados disponíveis
+                    </button>
+                    <div id="datasourse-selector" class="dropdown-menu"></div>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-5 tree-view">
-                árvore de indicadores
+        <div class="row main-row">
+            <div id="treeview" class="col-5">
             </div>
-            <div class="col-7">
+            <div class="col-7 mm-col">
                 <div id="mainmap"></div>
+                <div>
+                    <img class="legendmap" src="img/example.png">
+                    <div class="legendtxt">
+                        <div class="legendtxt1">Menor vulnerabilidade (índice 0)</div>
+                        <div class="legendtxt2">Maior vulnerabilidade (índice 1)</div>
+                    </div>
+                </div>
             </div>
         </div>
+        <div class="row detail-bar">
+            <div class="col-10">
+                <span id="detail-description"></span>
+            </div>
+            <div class="col-2 detail-pdf">
+                <a id="pdf-link" href="#" onclick="detail.displayPdf()" role="button" data-toggle="modal">Abrir arquivo PDF</a>
+                <span id="pdf-nolink"></span>
+            </div>
+        </div>
+
+        <div class="row detail-body">
+            <div class="col-6">
+                <div class="radar-chart"></div>
+            </div>
+            <div class="col-6">
+                <div id="detail-children"></div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este obra está licenciada com uma Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>.
+        </div>
+
         <div class="row">
-            <div class="col-12 detail">
-                Detalhes dos indicadores
+            <div class="col-md-12">
+               
+                <div class="modal fade" id="display-pdf" role="dialog" aria-labelledby="pdfviewer" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="pdfviewer">
+                                    Modal title
+                                </h5> 
+                                <button type="button" class="close" data-dismiss="modal">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <iframe id="pdffile" src=""></iframe>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                    Fechar
+                                </button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                
             </div>
         </div>
 
     </div>
 
     <script src="js/libs/jquery-3.6.0.min.js"></script>
+    <script src="js/libs/popper/1.11.0/popper.min.js"></script>
     <script src="js/libs/bootstrap-4.3.1/bootstrap.min.js"></script>
-    <script src="js/libs/leaflet-1.7.1-min.js"></script>
-    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="js/libs/leaflet-1.7.1-min.js"></script>    
+    <script src="js/libs/d3v3/d3.min.js"></script>
+    <script src="js/libs/d3v5/d3.v5.min.js"></script>
+    <script src="js/libs/rxjs/rxjs.umd.min.js"></script>
+    <script src="js/libs/d3-radarchart/radar-chart.js"></script>
 
-    <script src="js/utils.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/start-map.js"></script>
-    <script src="js/load-data.js"></script>
-    
+    <script src="js/utils.js"></script>
+    <script src="js/datasource-selector.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/data-loader.js"></script>
+    <script src="js/tree.js"></script>
+    <script src="js/detail.js"></script>
+    <script src="js/radar.js"></script>
     
 </body>
 </html>
