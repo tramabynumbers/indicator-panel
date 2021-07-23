@@ -19,7 +19,7 @@
             "geoFilePath":"data/pb/geo/munis-PB.geojson",
             "mapLegendFilePath":"data/pb/geo/legend.json",
             "mapLegendImgPath":"data/rmvale/geo/legend.png",
-            "mapLegendTxt":{"left":"Menor vulnerabilidade/Maior acesso (índice 0)","right":"Maior vulnerabilidade/Menor acesso (índice 1)"},
+            "mapLegendTxt":{"left":"Menor vulnerabilidade/Maior acesso (0)","right":"Maior vulnerabilidade/Menor acesso (1)"},
             "csvPath":"data/pb/csv/",
             "pdfPath":"data/pb/pdf/",
             "shortName":"COVID-19 PB",
