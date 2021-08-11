@@ -1,6 +1,6 @@
 {
    "dataversion":"v1.0.0-beta",
-   "key":"COVID-19 PB",
+   "key":"COVID-19PB",
    "description":"Índices da COVID-19 PB",
    "nodes":[
       {
