@@ -231,7 +231,6 @@
                   {
                      "key":"SUBIPSA-I2",
                      "description":"Segurança de renda pela cobertura no território",
-                     "externalfile":"Ficha_DimI1.pdf",
                      "nodes":[
                         {
                            "key":"V04",
