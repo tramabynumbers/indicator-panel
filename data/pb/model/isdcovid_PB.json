@@ -128,8 +128,7 @@
                            "nodes":[
                               {
                                  "key":"V14",
-                                 "description":"Proporção de óbitos por causas respiratórias",
-                                 "externalfile":"VS14.pdf"
+                                 "description":"Proporção de óbitos por causas respiratórias"                                 
                               }
                            ]
                         }
@@ -178,18 +177,15 @@
                            "nodes":[
                               {
                                  "key":"V18",
-                                 "description":"Hospitalizados por COVID-19",
-                                 "externalfile":"VS18.pdf"
+                                 "description":"Hospitalizados por COVID-19"
                               },
                               {
                                  "key":"V19",
-                                 "description":"Internados em UTI por COVID-19",
-                                 "externalfile":"VS19.pdf"
+                                 "description":"Internados em UTI por COVID-19"
                               },
                               {
                                  "key":"V20",
-                                 "description":"Hospitalizados em Enfermaria por COVID-19",
-                                 "externalfile":"VS20.pdf"
+                                 "description":"Hospitalizados em Enfermaria por COVID-19"
                               }
                            ]
                         }
