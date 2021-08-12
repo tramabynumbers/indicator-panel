@@ -69,7 +69,7 @@ var mainMap={
 
         mainMap.info.update = function (props) {
             this._div.innerHTML = (props ?
-                '<b>' + props.nm + '</b><br />Valor do índice: ' + ((props.indicator)?(props.indicator.toFixed(2)):("inexistente")) + ' (entre 0 e 1)'
+                '<b>' + props.nm + '</b><br />Valor do índice: ' + ((props.indicator>=0)?(props.indicator.toFixed(2)):("inexistente")) + ' (entre 0 e 1)'
                 : 'Selecione um município');
             if(props) detail.setSelectedGeom(props).updatePanel();
         };
