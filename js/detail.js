@@ -46,7 +46,7 @@ var detail={
 
         if(detail.selectedGeom){
             detailHeader=detailHeader+' <b>['+treeview.getSelected().key+'='+
-            ((detail.selectedGeom.indicator)?(detail.selectedGeom.indicator.toFixed(2)):('indefinido'))+']</b>'+
+            ((detail.selectedGeom.indicator>=0)?(detail.selectedGeom.indicator.toFixed(2)):('indefinido'))+']</b>'+
             ' para o município <b>'+detail.selectedGeom.nm+'</b>';
             if(treeview.hasChildren())
                 radar.draw(detail.getChildrenData(treeview.getChildren()));
