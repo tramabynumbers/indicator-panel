@@ -118,19 +118,19 @@
                            "nodes":[
                               {
                                  "key":"V03",
-                                 "description":"Óbitos por demais causas"
+                                 "description":"Proporção de óbitos por demais causas"
                               },
                               {
                                  "key":"V04",
-                                 "description":"Óbitos por causa indeterminada"
+                                 "description":"Proporção de óbitos por causa indeterminada"
                               },
                               {
                                  "key":"V05",
-                                 "description":"Óbitos por causas naturais"
+                                 "description":"Proporção de óbitos por causas naturais"
                               },
                               {
                                  "key":"V06",
-                                 "description":"Óbitos por causas externas"
+                                 "description":"Proporção de óbitos por causas externas"
                               }
                            ]
                         }
@@ -210,12 +210,12 @@
                         },
                         {
                            "key":"V05",
-                           "description":"Presença de beneficiários do BPC - Pessoa com deficiência (PCD) no território",
+                           "description":"Proporção de beneficiários do BPC - Pessoa com deficiência (PCD) no território",
                            "externalfile":"VPIND05.pdf"
                         },
                         {
                            "key":"V06",
-                           "description":"Presença de beneficiários do BPC - Pessoa idosa no território",
+                           "description":"Proporção de beneficiários do BPC - Pessoa idosa no território",
                            "externalfile":"VPIND06.pdf"
                         }
                      ]
@@ -232,7 +232,7 @@
                      "nodes":[
                         {
                            "key":"V07",
-                           "description":"Presença de conselhos no território",
+                           "description":"Conselhos no território",
                            "externalfile":"VPIND07.pdf"
                         }
                      ]
@@ -243,7 +243,7 @@
                      "nodes":[
                         {
                            "key":"V08",
-                           "description":"Presença de Organizações da Sociedade Civil no território",
+                           "description":"Organizações da Sociedade Civil no território",
                            "externalfile":"VPIND08.pdf"
                         }
                      ]
@@ -260,12 +260,12 @@
                      "nodes":[
                         {
                            "key":"V09",
-                           "description":"Presença de Indígenas cadastrados no CadÚnico",
+                           "description":"Proporção de Indígenas cadastrados no CadÚnico",
                            "externalfile":"VPIND09.pdf"
                         },
                         {
                            "key":"V10",
-                           "description":"Presença de Quilombolas cadastrados no CadÚnico",
+                           "description":"Proporção de Quilombolas cadastrados no CadÚnico",
                            "externalfile":"VPIND10.pdf"
                         },
                         {
@@ -281,12 +281,12 @@
                      "nodes":[
                         {
                            "key":"V12",
-                           "description":"Presença de  pessoas Ciganas cadastrados no CadÚnico",
+                           "description":"Proporção de  pessoas Ciganas cadastrados no CadÚnico",
                            "externalfile":"VPIND12.pdf"
                         },
                         {
                            "key":"V13",
-                           "description":"Presença de pessoas de Comunidade de terreiro cadastrados no CadÚnico",
+                           "description":"Proporção de pessoas de Comunidade de terreiro cadastrados no CadÚnico",
                            "externalfile":"VPIND13.pdf"
                         }
                      ]
@@ -297,17 +297,17 @@
                      "nodes":[
                         {
                            "key":"V14",
-                           "description":"Presença de Extrativistas cadastrados no CadÚnico",
+                           "description":"Proporção de Extrativistas cadastrados no CadÚnico",
                            "externalfile":"VPIND14.pdf"
                         },
                         {
                            "key":"V15",
-                           "description":"Presença de Ribeirinhas cadastrados no CadÚnico",
+                           "description":"Proporção de Ribeirinhas cadastrados no CadÚnico",
                            "externalfile":"VPIND15.pdf"
                         },
                         {
                            "key":"V16",
-                           "description":"Presença de Pescadores artesanais cadastrados no CadÚnico",
+                           "description":"Proporção de Pescadores artesanais cadastrados no CadÚnico",
                            "externalfile":"VPIND16.pdf"
                         }
                      ]
@@ -318,22 +318,22 @@
                      "nodes":[
                         {
                            "key":"V17",
-                           "description":"Presença de Agricultores familiares cadastrados no CadÚnico",
+                           "description":"Proporção de Agricultores familiares cadastrados no CadÚnico",
                            "externalfile":"VPIND17.pdf"
                         },
                         {
                            "key":"V18",
-                           "description":"Presença de pessoas Assentadas cadastrados no CadÚnico",
+                           "description":"Proporção de pessoas Assentadas cadastrados no CadÚnico",
                            "externalfile":"VPIND18.pdf"
                         },
                         {
                            "key":"V19",
-                           "description":"Presença de pessoas Acampadas cadastrados no CadÚnico",
+                           "description":"Proporção de pessoas Acampadas cadastrados no CadÚnico",
                            "externalfile":"VPIND19.pdf"
                         },
                         {
                            "key":"V20",
-                           "description":"Presença de Beneficiários do PNCF cadastrados no CadÚnico",
+                           "description":"Proporção de Beneficiários do PNCF cadastrados no CadÚnico",
                            "externalfile":"VPIND20.pdf"
                         }
                      ]
@@ -344,22 +344,22 @@
                      "nodes":[
                         {
                            "key":"V21",
-                           "description":"Presença de Atingidos por empreendimentos cadastrados no CadÚnico",
+                           "description":"Proporção de Atingidos por empreendimentos cadastrados no CadÚnico",
                            "externalfile":"VPIND21.pdf"
                         },
                         {
                            "key":"V22",
-                           "description":"Presença de Catadores de material reciclável cadastrados no CadÚnico",
+                           "description":"Proporção de Catadores de material reciclável cadastrados no CadÚnico",
                            "externalfile":"VPIND22.pdf"
                         },
                         {
                            "key":"V23",
-                           "description":"Presença de Presos do Sistema Carcerário cadastrados no CadÚnico",
+                           "description":"Proporção de Presos do Sistema Carcerário cadastrados no CadÚnico",
                            "externalfile":"VPIND23.pdf"
                         },
                         {
                            "key":"V24",
-                           "description":"Presença de pessoas em Situação de Rua cadastrados no CadÚnico",
+                           "description":"Proporção de pessoas em Situação de Rua cadastrados no CadÚnico",
                            "externalfile":"VPIND24.pdf"
                         }
                      ]
