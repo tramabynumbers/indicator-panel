@@ -57,6 +57,7 @@ used by legend inside mapa (disabled)
 }
 .dropdown-menu.show{
     z-index: 99999;
+    cursor: pointer;
 }
 .main-txt-menu-bar{
     margin-top: auto;
@@ -73,7 +74,14 @@ used by legend inside mapa (disabled)
     background-color: #f3f3f3 !important;
 }
 .detail-pdf{
-    text-align: end;
+    text-align: start;
+    width: fit-content;
+    display: inline;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: #c9ced2;
+    color: white;
+    border-radius: 5px;
 }
 .detail-body{
     min-height: calc(100% - 10px);
@@ -88,6 +96,7 @@ used by legend inside mapa (disabled)
     color: #fafbfc;
     width: 100%;
     text-align: center;
+    font-size: x-small;
 }
 
 /** modal window */
