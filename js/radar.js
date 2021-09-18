@@ -1,12 +1,14 @@
 var radar=radar||{};
 var radar={
-    margin:{top: 30, right: 35, bottom: 30, left: 35},
-    width:0,
-    height:0,
 
     init:()=>{
-        radar.width=Math.min(250, window.innerWidth - 10) - radar.margin.left - radar.margin.right,
-        radar.height=Math.min(radar.width, window.innerHeight - radar.margin.top - radar.margin.bottom - 20),
+        // reference values
+        radar.margin={top: 30, right: 35, bottom: 30, left: 35};
+        radar.width=280;
+        radar.height=280;
+        // adjust to actual values based on actual browser dimensions
+        radar.width=Math.min(radar.width, $('.radar-chart').innerWidth()) - radar.margin.left - radar.margin.right,
+        radar.height=Math.min(radar.height, $('.row.detail-body').innerHeight()) - radar.margin.top - radar.margin.bottom -5,
         radar.color=d3v3.scale.ordinal().range(["#60d8ff"]),
         radar.chartOptions={
             w: radar.width,
@@ -31,4 +33,3 @@ var radar={
         d3v3.select(".radar-chart").select("svg").remove();
     }
 };
-radar.init();

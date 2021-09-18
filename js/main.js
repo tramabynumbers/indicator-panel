@@ -8,6 +8,7 @@ $(document).ready(()=>{
         (ds)=>{
             let d=dataSourceSelector.getDataSourceById(ds.defaultSelectorId);
             dataSourceSelector.applyDataSourceChange(d);
+            radar.init();
         },
         (e)=> { console.log('onError: %s', e); },
         ()=> { console.log('onCompleted'); }
@@ -18,5 +19,6 @@ $(window).on('resize', ()=>{
     // set map height
     utils.setMainRowHeight(offsetHeight);
     treeview.redraw();
+    radar.init();
     // treeview.update(treeview.selectedNode);
 });
