@@ -16,7 +16,7 @@
         {
             "selectorId":"2",
             "modelFilePath":"data/pb/model/isdcovid_PB.json",
-            "geoFilePath":"data/pb/geo/rm-vale.geojson",
+            "geoFilePath":"data/pb/geo/rm-valem.geojson",
             "mapLegendFilePath":"data/pb/geo/legend.json",
             "mapLegendImgPath":"data/rmvale/geo/legend.png",
             "mapLegendTxt":{"left":"[0]","right":"[1]"},
