@@ -7,36 +7,36 @@
             "geoFilePath":"data/rmvale/geo/rm-vale.geojson",
             "mapLegendFilePath":"data/rmvale/geo/legend.json",
             "mapLegendImgPath":"data/rmvale/geo/legend.png",
-            "mapLegendTxt":{"left":"Menor vulnerabilidade (índice 0)","right":"Maior vulnerabilidade (índice 1)"},
+            "mapLegendTxt":{"left":"Menor vulnerabilidade [0]","right":"Maior vulnerabilidade [índice 1]"},
             "csvPath":"data/rmvale/csv/",
             "pdfPath":"data/rmvale/pdf/",
-            "shortName":"RM Vale(IVM-COVID-19)",
+            "shortName":"RM Vale [IVM-COVID-19]",
             "panelTitle":"Índice de Vulnerabilidade Metropolitana à COVID-19"
         },
         {
             "selectorId":"2",
             "modelFilePath":"data/pb/model/isdcovid_PB.json",
-            "geoFilePath":"data/pb/geo/munis-PB.geojson",
+            "geoFilePath":"data/pb/geo/rm-vale.geojson",
             "mapLegendFilePath":"data/pb/geo/legend.json",
             "mapLegendImgPath":"data/rmvale/geo/legend.png",
-            "mapLegendTxt":{"left":"Menor vulnerabilidade/Maior acesso (0)","right":"Maior vulnerabilidade/Menor acesso (1)"},
+            "mapLegendTxt":{"left":"[0]","right":"[1]"},
             "csvPath":"data/pb/csv/",
             "pdfPath":"data/pb/pdf/",
-            "shortName":"COVID-19 PB",
-            "panelTitle":"Plataforma COVID-19 - Paraíba"
+            "shortName":"RM Vale [Multi Tramas]: municípios",
+            "panelTitle":"Trama by numbers (por municípios)"
         },
         {
             "selectorId": "3",
             "modelFilePath": "data/pb2/model/isdcovid_PB2.json",
-            "geoFilePath": "data/pb2/geo/munis-PB.geojson",
+            "geoFilePath": "data/pb2/geo/grid-vale.geojson",
             "mapLegendFilePath": "data/pb2/geo/legend.json",
             "mapLegendImgPath": "data/rmvale/geo/legend.png",
-            "mapLegendTxt": {"left": "Menor vulnerabilidade/Maior acesso (0)",
-                             "right": "Maior vulnerabilidade/Menor acesso (1)"},
+            "mapLegendTxt": {"left": "[0]",
+                             "right": "[1]"},
             "csvPath": "data/pb2/csv/",
             "pdfPath": "data/pb2/pdf/",
-            "shortName": "COVID-19 PB/Indicadores",
-            "panelTitle": "Plataforma COVID-19 - Paraíba: indicadores avulsos"
+            "shortName": "RM Vale [Multi Tramas]: células",
+            "panelTitle": "Trama by numbers (por células)"
         }
     ]
 }
