@@ -4,7 +4,7 @@
    "description":"Indicadores avulsos da COVID-19 PB (sem cálculo vinculado)",
    "nodes":[
       {
-         "key":"ISD-COVID-19",
+         "key":"TO",
          "description":"Index SaúdeDemo da Covid (sem cálculo vinculado)",
          "nodes":[
             {
