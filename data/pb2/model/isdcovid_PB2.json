@@ -1,6 +1,6 @@
 {
    "dataversion":"v1.0.0-beta",
-   "key":"Indicadores_Avulsos",
+   "key":"TO",
    "description":"Indicadores avulsos da COVID-19 PB (sem cálculo vinculado)",
    "nodes":[
       {
