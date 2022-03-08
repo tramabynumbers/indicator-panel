@@ -1,0 +1,108 @@
+{
+   "dataversion":"v1.0.0-beta",
+   "key":"Tramas",
+   "description":"Trama by Numbers - escala celular (Sub-Região 3/RMVPLN)",
+   "externalfile":"tramassub.pdf",
+   "nodes":[
+      {
+         "key":"D[S]",
+         "description":"Dimensão Socioterritorial",
+         "nodes":[
+            {
+               "key":"T",
+               "description":"Território",
+               "nodes":[
+                  {
+                     "key":"T1",
+                     "description":"Presença de estabelecimentos agropecuários",
+                     "externalfile":"T1.pdf"
+                  },
+                  {
+                     "key":"T2",
+                     "description":"Uso e cobertura da terra",
+                     "externalfile":"T2.pdf"
+                  },
+                  {
+                     "key":"T3",
+                     "description":"Patch Richness Density (PRD)",
+                     "externalfile":"T3.pdf"
+                  },
+                  {
+                     "key":"T4",
+                     "description":"Índice de Diversidade de Shannon",
+                     "externalfile":"T4.pdf"
+                  },
+                  {
+                     "key":"T5",
+                     "description":"Presença de corpos hídricos",
+                     "externalfile":"T5.pdf"
+                  },
+                  {
+                     "key":"T6",
+                     "description":"Áreas Prioritárias para a Conservação",
+                     "externalfile":"T6.pdf"
+                  },
+                  {
+                     "key":"T7",
+                     "description":"Índice de Sensibilidade da Biodiversidade",
+                     "externalfile":"T7.pdf"
+                  }
+               ]
+            },
+            {
+               "key":"TO",
+               "description":"Tipologias de Ocupação",
+               "externalfile":"TO.pdf",
+               "nodes":[
+                  {
+                     "key":"TO1",
+                     "description":"Presença/Ausência de População"
+                  },
+                  {
+                     "key":"TO2",
+                     "description":"Presença/Ausência de Áreas Protegidas"
+                  },
+                  {
+                     "key":"TO3",
+                     "description":"Presença/Ausência de Assentamentos Precários"
+                  },
+                  {
+                     "key":"TO4",
+                     "description":"Presença/Ausência de Alta suscetibilidade à inundação e movimento de massa"
+                  }
+               ]
+            },
+            {
+               "key":"TT",
+               "description":"Tipologias Territoriais",
+               "externalfile":"TT.pdf",
+               "nodes":[
+                  {
+                     "key":"TT1",
+                     "description":"Presença/Ausência de População"
+                  },
+                  {
+                     "key":"TT2",
+                     "description":"Presença/Ausência de Áreas Protegidas"
+                  },
+                  {
+                     "key":"TT3",
+                     "description":"Presença/Ausência de Luzes noturnas"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "key":"D[MF]",
+         "description":"Dimensão Movimentos e Fluxos",
+         "nodes":[
+            {
+               "key":"TM",
+               "description":"Tipologias de Mobilidade",
+               "externalfile":"TM"
+            }
+         ]
+      }
+   ]
+}
