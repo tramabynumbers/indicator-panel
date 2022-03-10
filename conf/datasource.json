@@ -15,7 +15,7 @@
         },
         {
             "selectorId":"2",
-            "modelFilePath":"data/munis/model/isdcovid_PB.json",
+            "modelFilePath":"data/munis/model/munis.json",
             "geoFilePath":"data/munis/geo/rm-valem.geojson",
             "mapLegendFilePath":"data/munis/geo/legend.json",
             "mapLegendImgPath":"data/munis/geo/legend.png",
