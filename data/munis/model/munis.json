@@ -1,0 +1,498 @@
+{
+   "dataversion":"v1.0.0-beta",
+   "key":"Tramas",
+   "description":"Trama by Numbers - escala municipal",
+   "externalfile":"tramassub.pdf",
+   "nodes":[
+      {
+         "key":"D[S]",
+         "description":"Dimensão Socioterritorial",
+         "nodes":[
+            {
+               "key":"IDHM",
+               "description":"Índice de Desenvolvimento Humano [IDH-Municipal]",
+               "externalfile":"IDHM.pdf",
+               "nodes":[
+                  {
+                     "key":"IDHME",
+                     "description":"Índice de Desenvolvimento Humano [IDH-Municipal] - Dimensão Educação",
+                     "externalfile":"IDHME.pdf"
+                  },
+                  {
+                     "key":"IDHML",
+                     "description":"Índice de Desenvolvimento Humano [IDH-Municipal] - Dimensão Longevidade",
+                     "externalfile":"IDHML.pdf"
+                  },
+                  {
+                     "key":"IDHMR",
+                     "description":"Índice de Desenvolvimento Humano [IDH-Municipal] - Dimensão Renda",
+                     "externalfile":"IDHMR.pdf"
+                  }
+               ]
+            },
+            {
+               "key":"IDHMRAj",
+               "description":"Índice de Desenvolvimento Humano [IDH] - Dimensão Renda Ajustada pela Desigualdade",
+               "externalfile":"IDHMRAj.pdf"
+            },
+            {
+               "key":"ISH",
+               "description":"Índice de Segurança Hídrica [ISH]",
+               "externalfile":"ISH.pdf",
+               "nodes":[
+                  {
+                     "key":"ISAcess",
+                     "description":"Dimensão - Segurança de acessibilidade",
+                     "externalfile":"ISAcess.pdf",
+                     "nodes":[
+                        {
+                           "key":"ISH1",
+                           "description":"Índice de hidrometração",
+                           "externalfile":"ISH1.pdf"
+                        },
+                        {
+                           "key":"ISH2",
+                           "description":"Consumo médio de água per capita",
+                           "externalfile":"ISH2.pdf"
+                        },
+                        {
+                           "key":"ISH3",
+                           "description":"Índice de perdas (água) na distribuição",
+                           "externalfile":"ISH3.pdf"
+                        },
+                        {
+                           "key":"ISH4",
+                           "description":"Economias atingidas por paralisação (água)",
+                           "externalfile":"ISH4.pdf"
+                        },
+                        {
+                           "key":"ISH5",
+                           "description":"Economias atingidas por intermitências (água)",
+                           "externalfile":"ISH5.pdf"
+                        }
+                     ]
+                  },
+                  {
+                     "key":"ISQuali",
+                     "description":"Dimensão - Segurança de qualidade",
+                     "externalfile":"ISQuali.pdf",
+                     "nodes":[
+                        {
+                           "key":"ISH6",
+                           "description":"Volume de água tratada em ETA (Estação de Tratamento de Água)",
+                           "externalfile":"ISH6.pdf"
+                        },
+                        {
+                           "key":"ISH7",
+                           "description":"Índice de tratamento de esgoto",
+                           "externalfile":"ISH7.pdf"
+                        },
+                        {
+                           "key":"ISH8",
+                           "description":"Volume de esgoto bruto exportado",
+                           "externalfile":"ISH8.pdf"
+                        },
+                        {
+                           "key":"ISH9",
+                           "description":"Percentual de resíduos sólidos domiciliares (RDO) e públicos (RPU) coletado pelo agente público",
+                           "externalfile":"ISH9.pdf"
+                        }
+                     ]
+                  },
+                  {
+                     "key":"ISOf",
+                     "description":"Dimensão - Segurança de oferta",
+                     "externalfile":"ISOf.pdf",
+                     "nodes":[
+                        {
+                           "key":"ISH10",
+                           "description":"Volume de água tratada importado",
+                           "externalfile":"ISH10.pdf"
+                        },
+                        {
+                           "key":"ISH11",
+                           "description":"Volume de água tratada exportado",
+                           "externalfile":"ISH11.pdf"
+                        },
+                        {
+                           "key":"ISH12",
+                           "description":"Volume de água disponibilizado por economia",
+                           "externalfile":"ISH12.pdf"
+                        }
+                     ]
+                  },
+                  {
+                     "key":"ISCob",
+                     "description":"Dimensão - Segurança de cobertura",
+                     "externalfile":"ISCob.pdf",
+                     "nodes":[
+                        {
+                           "key":"ISH13",
+                           "description":"Taxa de cobertura do serviço de coleta (RDO) em relação à população total",
+                           "externalfile":"ISH13.pdf"
+                        },
+                        {
+                           "key":"ISH14",
+                           "description":"Índice de atendimento total de água",
+                           "externalfile":"ISH14.pdf"
+                        },
+                        {
+                           "key":"ISH15",
+                           "description":"Índice de atendimento total de esgoto",
+                           "externalfile":"ISH15.pdf"
+                        }
+                     ]
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "key":"D[MF]",
+         "description":"Dimensão Movimentos e Fluxos",
+         "nodes":[
+            {
+               "key":"REGIC",
+               "description":"Relacionamentos entre as cidades",
+               "externalfile":"REGIC.pdf",
+               "nodes":[
+                  {
+                     "key":"IAG",
+                     "description":"Índice de Atração Geral",
+                     "externalfile":"IAG.pdf",
+                     "nodes":[
+                        {
+                           "key":"IAG1",
+                           "description":"Índice de atração temática para compra de vestuário e calçados",
+                           "externalfile":"IAG1.pdf"
+                        },
+                        {
+                           "key":"IAG2",
+                           "description":"Índice de atração temática para compra de móveis e eletroeletrônicos",
+                           "externalfile":"IAG2.pdf"
+                        },
+                        {
+                           "key":"IAG3",
+                           "description":"Índice de atração temática para saúde de baixa e média complexidades",
+                           "externalfile":"IAG3.pdf"
+                        },
+                        {
+                           "key":"IAG4",
+                           "description":"Índice de atração temática para saúde de alta complexidade",
+                           "externalfile":"IAG4.pdf"
+                        },
+                        {
+                           "key":"IAG5",
+                           "description":"Índice de atração temática para ensino superior",
+                           "externalfile":"IAG5.pdf"
+                        },
+                        {
+                           "key":"IAG6",
+                           "description":"Índice de atração temática para atividades culturais",
+                           "externalfile":"IAG6.pdf"
+                        },
+                        {
+                           "key":"IAG7",
+                           "description":"Índice de atração temática para atividades esportivas",
+                           "externalfile":"IAG7.pdf"
+                        },
+                        {
+                           "key":"IAG8",
+                           "description":"Índice de atração temática para aeroporto",
+                           "externalfile":"IAG8.pdf"
+                        },
+                        {
+                           "key":"IAG9",
+                           "description":"Índice de atração temática para jornais",
+                           "externalfile":"IAG9.pdf"
+                        },
+                        {
+                           "key":"IAG10",
+                           "description":"Índice de atração temática para transporte público",
+                           "externalfile":"IAG10.pdf"
+                        }
+                     ]
+                  },
+                  {
+                     "key":"ICS",
+                     "description":"Índice tipologias de comércio e serviço",
+                     "externalfile":"ICS.pdf",
+                     "nodes":[
+                        {
+                           "key":"ICS1",
+                           "description":"Percentual da quantidade de tipologias de comércio na cidade em questão, em relação ao total de tipologias de comércio (CNAE)",
+                           "externalfile":"ICS1.pdf"
+                        },
+                        {
+                           "key":"ICS2",
+                           "description":"Percentual da quantidade de tipologias de serviços na cidade em questão, em relação ao total de  tipologias de serviços (CNAE)",
+                           "externalfile":"ICS2.pdf"
+                        }
+                     ]
+                  },
+                  {
+                     "key":"AAG",
+                     "description":"Atividades agropecuárias",
+                     "externalfile":"AAG.pdf",
+                     "nodes":[
+                        {
+                           "key":"IAA1",
+                           "description":"Índice de atração agropecuária para aquisição de insumos para a produção agropecuária",
+                           "externalfile":"IAA1.pdf"
+                        },
+                        {
+                           "key":"IAA2",
+                           "description":"Índice de atração agropecuária para aquisição de maquinários e implementos para a produção agropecuária",
+                           "externalfile":"IAA2.pdf"
+                        },
+                        {
+                           "key":"IAA3",
+                           "description":"Índice de atração agropecuária para assistência técnica para a produção agropecuária",
+                           "externalfile":"IAA3.pdf"
+                        },
+                        {
+                           "key":"IAA4",
+                           "description":"Índice de atração agropecuária para destino da produção agropecuária",
+                           "externalfile":"IAA4.pdf"
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "key":"EE",
+               "description":"Elementos estruturantes da mobilidade",
+               "externalfile":"EE.pdf",
+               "nodes":[
+                  {
+                     "key":"DV",
+                     "description":"Densidade de vias ",
+                     "externalfile":"DV.pdf"
+                  },
+                  {
+                     "key":"DT",
+                     "description":"Diversidade de Tipologia de Vias",
+                     "externalfile":"DT.pdf"
+                  }
+               ]
+            },
+            {
+               "key":"MOB",
+               "description":"Mobilidade",
+               "externalfile":"MOB.pdf",
+               "nodes":[
+                  {
+                     "key":"MOBT",
+                     "description":"Mobilidade para outro município - Motivo trabalho",
+                     "externalfile":"MOBT.pdf"
+                  },
+                  {
+                     "key":"MOB1",
+                     "description":"Centralidade  de  grau  (degree) - Modo de deslocamento individual. Motivo serviço",
+                     "externalfile":"MOB1.pdf"
+                  },
+                  {
+                     "key":"MOB2",
+                     "description":"Intermediação  (betweenness) - Modo de deslocamento individual. Motivo serviço",
+                     "externalfile":"MOB2.pdf"
+                  },
+                  {
+                     "key":"MOB3",
+                     "description":"Centralidade  de  grau  (degree) - Modo de deslocamento individual. Motivo trabalho",
+                     "externalfile":"MOB3.pdf"
+                  },
+                  {
+                     "key":"MOB4",
+                     "description":"Intermediação  (betweenness) - Modo de deslocamento individual. Motivo trabalhos",
+                     "externalfile":"MOB4.pdf"
+                  }
+               ]
+            },
+            {
+               "key":"RAI",
+               "description":"Índice de Acessibilidade Rural [RAI]",
+               "externalfile":"RAI.pdf",
+               "nodes":[
+                  {
+                     "key":"RAI1",
+                     "description":"Índice de Acessibilidade Rural [RAI] - por vias rápidas"
+                  },
+                  {
+                     "key":"RAI2",
+                     "description":"Índice de Acessibilidade Rural [RAI] - por vias locais"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "key":"D[I]",
+         "description":"Dimensão Institucional",
+         "nodes":[
+            {
+               "key":"IG",
+               "description":"Instrumentos de Gestão relacionados ao Planejamento Territorial",
+               "externalfile":"IG.pdf",
+               "nodes":[
+                  {
+                     "key":"IG1",
+                     "description":"Plano diretor - existência",
+                     "externalfile":"IG1.pdf"
+                  },
+                  {
+                     "key":"IG2",
+                     "description":"Legislação sobre área e/ou zona especial de interesse social",
+                     "externalfile":"IG2.pdf"
+                  },
+                  {
+                     "key":"IG3",
+                     "description":"Legislação sobre zona e/ou área de interesse especial",
+                     "externalfile":"IG3.pdf"
+                  },
+                  {
+                     "key":"IG4",
+                     "description":"Lei de perímetro urbano - existência",
+                     "externalfile":"IG4.pdf"
+                  },
+                  {
+                     "key":"IG5",
+                     "description":"Legislação sobre parcelamento do solo - existência",
+                     "externalfile":"IG5.pdf"
+                  },
+                  {
+                     "key":"IG6",
+                     "description":"Legislação sobre zoneamento ou uso e ocupação do solo - existência",
+                     "externalfile":"IG6.pdf"
+                  },
+                  {
+                     "key":"IG7",
+                     "description":"Legislação sobre solo criado ou outorga onerosa do direito de construir - existência",
+                     "externalfile":"IG7.pdf"
+                  },
+                  {
+                     "key":"IG8",
+                     "description":"Legislação sobre contribuição de melhoria - existência",
+                     "externalfile":"IG8.pdf"
+                  },
+                  {
+                     "key":"IG9",
+                     "description":"Legislação sobre operação urbana consorciada - existência",
+                     "externalfile":"IG9.pdf"
+                  },
+                  {
+                     "key":"IG10",
+                     "description":"Legislação sobre estudo de impacto de vizinhança - existência",
+                     "externalfile":"IG10.pdf"
+                  },
+                  {
+                     "key":"IG11",
+                     "description":"Código de obras - existência",
+                     "externalfile":"IG11.pdf"
+                  },
+                  {
+                     "key":"IG12",
+                     "description":"Legislação sobre zoneamento ambiental ou zoneamento ecológico-econômico - existência",
+                     "externalfile":"IG12.pdf"
+                  },
+                  {
+                     "key":"IG13",
+                     "description":"Legislação sobre servidão administrativa - existência",
+                     "externalfile":"IG13.pdf"
+                  },
+                  {
+                     "key":"IG14",
+                     "description":"Legislação sobre tombamento - existência",
+                     "externalfile":"IG14.pdf"
+                  },
+                  {
+                     "key":"IG15",
+                     "description":"Legislação sobre unidade de conservação - existência",
+                     "externalfile":"IG15.pdf"
+                  },
+                  {
+                     "key":"IG16",
+                     "description":"Legislação sobre concessão de uso especial para fins de moradia - existência",
+                     "externalfile":"IG16.pdf"
+                  },
+                  {
+                     "key":"IG17",
+                     "description":"Legislação sobre usucapião especial de imóvel urbano - existência",
+                     "externalfile":"IG17.pdf"
+                  },
+                  {
+                     "key":"IG18",
+                     "description":"Legislação sobre direito de superfície - existência",
+                     "externalfile":"IG18.pdf"
+                  },
+                  {
+                     "key":"IG19",
+                     "description":"Legislação sobre regularização fundiária - existência",
+                     "externalfile":"IG19.pdf"
+                  },
+                  {
+                     "key":"IG20",
+                     "description":"Legislação sobre a legitimação de posse - existência",
+                     "externalfile":"IG20.pdf"
+                  },
+                  {
+                     "key":"IG21",
+                     "description":"Legislação sobre estudo prévio de impacto ambiental - existência",
+                     "externalfile":"IG21.pdf"
+                  }
+               ]
+            },
+            {
+               "key":"OSC",
+               "description":"Organizações da Sociedade Civil",
+               "externalfile":"OSC.pdf",
+               "nodes":[
+                  {
+                     "key":"OSC1",
+                     "description":"Proporção OSC - Subárea Habitação"
+                  },
+                  {
+                     "key":"OSC2",
+                     "description":"Proporção OSC - Subárea Saúde"
+                  },
+                  {
+                     "key":"OSC3",
+                     "description":"Proporção OSC - Subárea Cultura e Recreação"
+                  },
+                  {
+                     "key":"OSC4",
+                     "description":"Proporção OSC - Subárea Educação e Pesquisa"
+                  },
+                  {
+                     "key":"OSC5",
+                     "description":"Proporção OSC -  Subárea Assistência Social"
+                  },
+                  {
+                     "key":"OSC6",
+                     "description":"Proporção OSC - Subárea Religião"
+                  },
+                  {
+                     "key":"OSC7",
+                     "description":"Proporção OSC - Subárea Associações Patronais e Profissionais de Produtores Rurais"
+                  },
+                  {
+                     "key":"OSC8",
+                     "description":"Proporção OSC - Subárea Meio Ambiente e Proteção Ambiental"
+                  },
+                  {
+                     "key":"OSC9",
+                     "description":"Proporção OSC - Subárea Desenvolvimento e Defesa de Direitos"
+                  },
+                  {
+                     "key":"OSC10",
+                     "description":"Proporção OSC - Subárea Outros"
+                  },
+                  {
+                     "key":"OSC11",
+                     "description":"Proporção OSC - Outras atividades associativas"
+                  }
+               ]
+            }
+         ]
+      }
+   ]
+}
