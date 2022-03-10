@@ -12,37 +12,42 @@
                 {
                     "key":"V01",
                     "description":"Domicílios com rendimento domiciliar nominal mensal per capita de até 1 salário mínimo (s.m.)",
-                    "externalfile":"ap-v01.pdf"
+                    "externalfile":"APV01.pdf"
                 },
                 {
                     "key":"V02",
                     "description":"Idosos (60 anos e mais) com rendimento nominal mensal de até 1 s.m.",
-                    "externalfile":"ap-v02.pdf"
+                    "externalfile":"APV02.pdf"
                 },
                 {
                     "key":"V03",
                     "description":"Idosos (60 anos e mais), responsáveis pelo domicílio, com rendimento nominal mensal de até 1 s.m.",
-                    "externalfile":"ap-v03.pdf"
+                    "externalfile":"APV03.pdf"
                 },
                 {
                     "key":"V04",
-                    "description":"População acima da expectativa de vida (referencial: expectativa de vida do Estado de São Paulo)"
+                    "description":"População acima da expectativa de vida (referencial: expectativa de vida do Estado de São Paulo)",
+                    "externalfile":"APV04.pdf"
                 },
                 {
                     "key":"V05",
-                    "description":"Famílias cadastradas no CadÚnico com rendimento nominal mensal de até ½ s.m."
+                    "description":"Famílias cadastradas no CadÚnico com rendimento nominal mensal de até ½ s.m.",
+                    "externalfile":"APV05.pdf"
                 },
                 {
                     "key":"V06",
-                    "description":"Idosos beneficiários do BPC (65 anos e mais)"
+                    "description":"Idosos beneficiários do BPC (65 anos e mais)",
+                    "externalfile":"APV06.pdf"
                 },
                 {
                     "key":"V07",
-                    "description":"Domicílios com condições de adensamento excessivo (número médio de moradores superior a três, por dormitório)"
+                    "description":"Domicílios com condições de adensamento excessivo (número médio de moradores superior a três, por dormitório)",
+                    "externalfile":"APV07.pdf"
                 },
                 {
                     "key":"V08",
                     "description":"Famílias em condições de coabitação (famílias conviventes em um mesmo domicílio)"
+                    "externalfile":"APV08.pdf"
                 }
             ]
         },
@@ -53,19 +58,23 @@
             "nodes":[
                 {
                     "key":"V01",
-                    "description":"Domicílios atingidos por paralisações no sistema de abastecimento de água"
+                    "description":"Domicílios atingidos por paralisações no sistema de abastecimento de água",
+                    "externalfile":"ATV01.pdf"
                 },
                 {
                     "key":"V02",
-                    "description":"Índice de tratamento de esgoto (do município)"
+                    "description":"Índice de tratamento de esgoto (do município)",
+                    "externalfile":"ATV02.pdf"
                 },
                 {
                     "key":"V03",
-                    "description":"Domicílios sem acesso à rede geral de água e poço ou nascente"
+                    "description":"Domicílios sem acesso à rede geral de água e poço ou nascente",
+                    "externalfile":"ATV03.pdf"
                 },
                 {
                     "key":"V04",
-                    "description":"Domicílios sem acesso à esgotamento sanitário e fossa séptica"
+                    "description":"Domicílios sem acesso à esgotamento sanitário e fossa séptica",
+                    "externalfile":"ATV04.pdf"
                 }
             ]
         },
@@ -76,74 +85,54 @@
             "nodes":[
                 {
                     "key":"V01",
-                    "description":"Taxa de leitos (UTI) total por 1.000 habitantes para município"
+                    "description":"Taxa de leitos (UTI) total por 1.000 habitantes para município",
+                    "externalfile":"ASV01.pdf"
                 },
                 {
                     "key":"V02",
-                    "description":"Proporção leitos (UTI) SUS em relação aos leitos totais"
+                    "description":"Proporção leitos (UTI) SUS em relação aos leitos totais",
+                    "externalfile":"ASV02.pdf"
                 },
                 {
                     "key":"V03",
-                    "description":"Taxa de leitos (Clínica Médica) total por 1.000 habitantes para município"
+                    "description":"Taxa de leitos (Clínica Médica) total por 1.000 habitantes para município",
+                    "externalfile":"ASV03.pdf"
                 },
                 {
                     "key":"V04",
-                    "description":"Proporção leitos (Clínica Médica) SUS em relação aos leitos totais"
+                    "description":"Proporção leitos (Clínica Médica) SUS em relação aos leitos totais",
+                    "externalfile":"ASV04.pdf"
                 },
                 {
                     "key":"V05",
-                    "description":"Taxa de Unidade Móvel de Nível Pré-hospitalar na Área de Urgência e Emergência (SAMU) por 1.000 habitantes para município e 10.000 habitantes para a Sub-Região da RMVPLN"
+                    "description":"Taxa de Unidade Móvel de Nível Pré-hospitalar na Área de Urgência e Emergência (SAMU) por 1.000 habitantes para município e 10.000 habitantes para a Sub-Região da RMVPLN",
+                    "externalfile":"ASV05.pdf"
                 },
                 {
                     "key":"V06",
-                    "description":"Taxa de respiradores e ventiladores (em uso) por 1.000 habitantes para município"
+                    "description":"Taxa de respiradores e ventiladores (em uso) por 1.000 habitantes para município",
+                    "externalfile":"ASV06.pdf"
                 },
                 {
                     "key":"V07",
-                    "description":"Proporção respiradores SUS (em uso) em relação aos respiradores totais (em uso)"
+                    "description":"Proporção respiradores SUS (em uso) em relação aos respiradores totais (em uso)",
+                    "externalfile":"ASV07.pdf"
                 },
                 {
                     "key":"V08",
-                    "description":"Taxa de médicos por 1.000 habitantes"
+                    "description":"Taxa de médicos por 1.000 habitantes",
+                    "externalfile":"ASV08.pdf"
                 },
                 {
                     "key":"V09",
-                    "description":"Proporção médicos que atendem pelo SUS em relação ao total de médico"
+                    "description":"Proporção médicos que atendem pelo SUS em relação ao total de médico",
+                    "externalfile":"ASV09.pdf"
                 },
                 {
                     "key":"V10",
                     "description":"Percentual da população que não é beneficiária de plano de saúde",
-                    "nodes":[
-                        {
-                            "key":"V08",
-                            "description":"Taxa de médicos por 1.000 habitantes",
-                            "nodes":[
-                                {
-                                    "key":"V01",
-                                    "description":"Taxa de médicos por 1.000 habitantes"
-                                },
-                                {
-                                    "key":"V02",
-                                    "description":"Proporção médicos que atendem pelo SUS em relação ao total de médico",
-                                    "nodes":[
-                                        {
-                                            "key":"folha1",
-                                            "description":"Taxa de médicos por 1.000 habitantes"
-                                        },
-                                        {
-                                            "key":"folha2",
-                                            "description":"Proporção médicos que atendem pelo SUS em relação ao total de médico"
-                                            
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "key":"V09",
-                            "description":"Proporção médicos que atendem pelo SUS em relação ao total de médico"
-                        }
-                    ]
+                    "externalfile":"ASV010.pdf"
+                    
                 }
             ]
         }
